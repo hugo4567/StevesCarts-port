@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "stevescarts",
+  "version": "${version}",
+
+  "name": "Steves Carts 3",
+  "description": "A carttastic mod adding a near infinite number of carts possible to the game, through the creation of  modular carts.",
+  "authors": [
+    "modmuss50",
+    "Gory_Moon",
+    "Vswe"
+  ],
+  "contact": {
+    "homepage": "https://github.com/TechReborn/StevesCarts",
+    "sources": "https://github.com/TechReborn/StevesCarts",
+    "issues": "https://github.com/TechReborn/StevesCarts/issues"
+  },
+
+  "license": "MIT",
+  "icon": "assets/stevescarts/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "vswe.stevescarts.StevesCarts"
+    ],
+    "fabric-datagen": [
+      "vswe.stevescarts.data.StevesCartsDatagen"
+    ],
+    "client": [
+      "vswe.stevescarts.client.StevesCartsClient"
+    ]
+  },
+  "mixins": [
+    "stevescarts.mixins.json"
+  ],
+  "accessWidener": "stevescarts.accesswidener",
+
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "fabric": "*",
+    "minecraft": "~1.18.2",
+    "java": ">=17"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}

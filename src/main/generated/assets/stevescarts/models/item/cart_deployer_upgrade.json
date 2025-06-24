@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "stevescarts:block/cart_deployer_upgrade_icon"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "stevescarts:block/creative_mode_upgrade_icon"
+  }
+}
