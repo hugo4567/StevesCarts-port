@@ -11,6 +11,7 @@ import vswe.stevescarts.entity.CartEntity;
 import vswe.stevescarts.item.StevesCartsItems;
 import vswe.stevescarts.module.hull.HullModuleType;
 import vswe.stevescarts.module.tool.ToolModuleType;
+import vswe.stevescarts.util.TextHelper;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
@@ -23,7 +24,6 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryEntry;
 
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
-import net.fabricmc.fabric.api.tag.convention.v1.TagUtil;
 
 public class ModuleType<T extends CartModule> implements ItemConvertible {
 	public static final Registry<ModuleType<?>> REGISTRY = (Registry<ModuleType<?>>) (Object) FabricRegistryBuilder.createSimple(ModuleType.class, StevesCarts.id("module_type")).buildAndRegister();
@@ -63,7 +63,7 @@ public class ModuleType<T extends CartModule> implements ItemConvertible {
 		this.noHullTop = noHullTop;
 		this.incompatibilities = incompatibilities;
 		this.tagRequirements = requirements;
-		this.translationKeyText = Text.translatable(this.translationKey);
+		this.translationKeyText = TextHelper.translatable(this.translationKey);
 		this.item = new ModuleItem(new Item.Settings().group(StevesCartsItems.MODULES).maxCount(1), this);
 		Registry.register(Registry.ITEM, id, this.item);
 	}
@@ -76,9 +76,11 @@ public class ModuleType<T extends CartModule> implements ItemConvertible {
 		if (this.incompatibilities == null) {
 			return null;
 		}
-
 		for (ModuleType<?> type : list) {
-			if (TagUtil.isIn(this.incompatibilities, type)) {
+			// Contourne le problème de casting d'identifiants en 1.18.2
+			if (ModuleType.REGISTRY.getEntryList(this.incompatibilities).map(
+				entryList -> entryList.stream().anyMatch(entry -> entry.value() == type)
+			).orElse(false)) {
 				return type;
 			}
 		}
@@ -90,9 +92,15 @@ public class ModuleType<T extends CartModule> implements ItemConvertible {
 		if (this.tagRequirements == null) {
 			return null;
 		}
-
 		for (Object2IntMap.Entry<TagKey<ModuleType<?>>> req : this.tagRequirements.object2IntEntrySet()) {
-			if (types.stream().filter(type -> TagUtil.isIn(req.getKey(), type)).count() < req.getIntValue()) {
+			// Contourne le problème de casting d'identifiants en 1.18.2
+			TagKey<ModuleType<?>> key = req.getKey();
+			long count = types.stream().filter(type -> 
+				ModuleType.REGISTRY.getEntryList(key).map(
+					entryList -> entryList.stream().anyMatch(entry -> entry.value() == type)
+				).orElse(false)
+			).count();
+			if (count < req.getIntValue()) {
 				return req;
 			}
 		}

@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import vswe.stevescarts.StevesCarts;
 import vswe.stevescarts.mixin.TagManagerLoaderAccessor;
+import vswe.stevescarts.util.TextHelper;
 
 import net.minecraft.tag.TagKey;
 import net.minecraft.text.Text;
@@ -28,6 +29,6 @@ public class ModuleTags {
 	}
 
 	public static Text toText(TagKey<ModuleType<?>> tag) {
-		return Text.translatable("tag." + tag.id().getNamespace() + "." + tag.id().getPath());
+		return TextHelper.translatable("tag." + tag.id().getNamespace() + "." + tag.id().getPath());
 	}
 }

@@ -1,5 +1,7 @@
 package vswe.stevescarts.screen.widget;
 
+import vswe.stevescarts.util.TextHelper;
+
 import io.github.cottonmc.cotton.gui.GuiDescription;
 import io.github.cottonmc.cotton.gui.widget.WLabel;
 
@@ -12,7 +14,7 @@ public class WPropertyLabel extends WLabel {
 	private final Property property;
 
 	public WPropertyLabel(String translation, Property property) {
-		super(Text.translatable(translation, 0));
+		super(TextHelper.translatable(translation, 0));
 		this.translation = translation;
 		this.property = property;
 	}
@@ -24,7 +26,7 @@ public class WPropertyLabel extends WLabel {
 
 	@Override
 	public void paint(MatrixStack matrices, int x, int y, int mouseX, int mouseY) {
-		this.text = Text.translatable(this.translation, this.property.get());
+		this.text = TextHelper.translatable(this.translation, this.property.get());
 		super.paint(matrices, x, y, mouseX, mouseY);
 	}
 }

@@ -1,5 +1,7 @@
 package vswe.stevescarts.screen.widget;
 
+import vswe.stevescarts.util.TextHelper;
+
 import java.util.function.IntConsumer;
 import java.util.function.IntSupplier;
 
@@ -47,8 +49,8 @@ public class WLightThreshold extends WWidget {
 
 	@Override
 	public void addTooltip(TooltipBuilder tooltip) {
-		tooltip.add(Text.translatable("screen.stevescarts.cart.threshold", this.current));
-		tooltip.add(Text.translatable("screen.stevescarts.cart.current", this.lightSupplier.getAsInt()));
+		tooltip.add(TextHelper.translatable("screen.stevescarts.cart.threshold", this.current));
+		tooltip.add(TextHelper.translatable("screen.stevescarts.cart.current", this.lightSupplier.getAsInt()));
 	}
 
 	@Override

@@ -4,7 +4,7 @@ import alexiil.mc.lib.attributes.fluid.amount.FluidAmount;
 import alexiil.mc.lib.attributes.fluid.render.DefaultFluidVolumeRenderer;
 import alexiil.mc.lib.attributes.fluid.render.FluidRenderFace;
 import alexiil.mc.lib.attributes.fluid.volume.FluidKeys;
-import reborncore.common.util.Tank;
+import vswe.stevescarts.util.Tank;
 
 import java.util.ArrayList;
 import java.util.EnumSet;
@@ -12,13 +12,14 @@ import java.util.List;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.util.math.Direction;
 
 public class FluidRenderUtil {
 	private static final EnumSet<Direction> ALL_DIRECTIONS = EnumSet.allOf(Direction.class);
 
 	public static void renderFluidCuboid(MatrixStack matrices, Tank tank, float x, float y, float z, float sizeX, float sizeY, float sizeZ) {
-		if (tank.isEmpty()) {
+		if (tank.isEmpty() || tank.getFluid() == Fluids.EMPTY) {
 			return;
 		}
 		List<FluidRenderFace> faces = new ArrayList<>();

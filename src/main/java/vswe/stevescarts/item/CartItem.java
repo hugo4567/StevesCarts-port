@@ -1,5 +1,7 @@
 package vswe.stevescarts.item;
 
+import vswe.stevescarts.util.TextHelper;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -29,7 +31,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
 public class CartItem extends Item {
-	public static final Text PRESS_SHIFT = Text.translatable("tooltip.stevescarts.press_shift").formatted(Formatting.GRAY);
+	public static final Text PRESS_SHIFT = TextHelper.formatted(TextHelper.translatable("tooltip.stevescarts.press_shift"), Formatting.GRAY);
 
 	public CartItem(Settings settings) {
 		super(settings);

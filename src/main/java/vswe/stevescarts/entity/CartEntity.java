@@ -134,13 +134,9 @@ public class CartEntity extends MinecartEntity {
 		}
 		return ActionResult.success(player.world.isClient);
 	}
-
-	@Override
 	protected Item getItem() {
 		return null;
 	}
-
-	@Override
 	public void dropItems(DamageSource damageSource) {
 		this.kill();
 		// TODO
@@ -271,10 +267,9 @@ public class CartEntity extends MinecartEntity {
 
 	public boolean isStopped() {
 		return this.stopTicks > 0;
-	}
-
+	}	// Cette classe implémente Storage pour les fluides
 	@SuppressWarnings("UnstableApiUsage")
-	public class FluidStorage implements Storage<FluidVariant> {
+	public class FluidStorage implements net.fabricmc.fabric.api.transfer.v1.storage.Storage<FluidVariant> {
 		private final Long zero = 0L;
 
 		@Override
@@ -297,13 +292,23 @@ public class CartEntity extends MinecartEntity {
 					.orElse(zero);
 		}
 
+		// Cette méthode est requise par l'interface Storage<FluidVariant> en 1.18.2
 		@Override
-		public Iterator<StorageView<FluidVariant>> iterator() {
+		public Iterator<net.fabricmc.fabric.api.transfer.v1.storage.StorageView<FluidVariant>> iterator(TransactionContext transaction) {
 			return CartEntity.this
 					.getTanks()
-					.map(tank -> tank.getTank().iterator())
-					.flatMap(it -> StreamSupport.stream(Spliterators.spliteratorUnknownSize(it, Spliterator.ORDERED), false))
+					.flatMap(tank -> {
+						Iterator<net.fabricmc.fabric.api.transfer.v1.storage.StorageView<FluidVariant>> iterator = tank.getTank().iterator();
+						return StreamSupport.stream(
+							Spliterators.spliteratorUnknownSize(iterator, Spliterator.ORDERED),
+							false
+						);
+					})
 					.iterator();
+		}
+				// Cette méthode n'est plus utilisée en 1.18.2 mais nous l'implémentons pour maintenir la compatibilité
+		public Iterator<net.fabricmc.fabric.api.transfer.v1.storage.StorageView<FluidVariant>> iterator() {
+			return iterator(null);
 		}
 	}
 

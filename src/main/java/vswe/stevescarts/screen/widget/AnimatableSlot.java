@@ -3,7 +3,7 @@ package vswe.stevescarts.screen.widget;
 import io.github.cottonmc.cotton.gui.ValidatedSlot;
 
 import net.minecraft.block.entity.ChestLidAnimator;
-import net.minecraft.block.entity.LidOpenable;
+import vswe.stevescarts.util.LidOpenable;
 import net.minecraft.inventory.Inventory;
 
 public class AnimatableSlot extends ValidatedSlot implements LidOpenable {
@@ -51,6 +51,11 @@ public class AnimatableSlot extends ValidatedSlot implements LidOpenable {
 		} else {
 			this.animator.step();
 		}
+	}
+
+	@Override
+	public boolean isOpen() {
+		return this.valid;
 	}
 }
 

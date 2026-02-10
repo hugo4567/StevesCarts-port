@@ -5,14 +5,13 @@ import io.github.cottonmc.cotton.gui.networking.ScreenNetworking;
 import io.github.cottonmc.cotton.gui.widget.WItemSlot;
 import io.github.cottonmc.cotton.gui.widget.WLabel;
 import io.github.cottonmc.cotton.gui.widget.WPlainPanel;
-import reborncore.common.fluid.FluidUtils;
-import reborncore.common.fluid.FluidValue;
-import reborncore.common.util.Tank;
 import vswe.stevescarts.StevesCarts;
 import vswe.stevescarts.entity.CartEntity;
 import vswe.stevescarts.module.ModuleType;
 import vswe.stevescarts.screen.CartHandler;
 import vswe.stevescarts.screen.widget.WFluidSlot;
+import vswe.stevescarts.util.FluidUtils;
+import vswe.stevescarts.util.Tank;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.SimpleInventory;
@@ -25,7 +24,7 @@ public class TankModule extends StorageModule {
 	protected final Tank tank;
 	private final Identifier packetId;
 
-	public TankModule(CartEntity entity, ModuleType<?> type, FluidValue capacity) {
+	public TankModule(CartEntity entity, ModuleType<?> type, int capacity) {
 		super(entity, type);
 		this.tank = new Tank("Tank", capacity, null);
 		this.packetId = tankUpdatePacketId(type.getId().getPath());
@@ -61,10 +60,20 @@ public class TankModule extends StorageModule {
 		});
 		emptyBucketSlot.setInsertingAllowed(false);
 		panel.add(filledBucketSlot, 0, 15);
-		panel.add(emptyBucketSlot, 0, 48);
-		panel.add(fluidSlot, 20, 15, 36, 51);
+		panel.add(emptyBucketSlot, 0, 48);		panel.add(fluidSlot, 20, 15, 36, 51);
 		ScreenNetworking.of(handler, NetworkSide.CLIENT).receive(this.packetId, buf -> this.tank.read(buf.readNbt()));
-		handler.addTicker(() -> ScreenNetworking.of(handler, NetworkSide.SERVER).send(this.packetId, buf -> buf.writeNbt(this.tank.write(new NbtCompound()))));
+		// En 1.18.2, nous devons gérer différemment l'envoi des données
+		final Runnable ticker = new Runnable() {
+			@Override
+			public void run() {
+				NbtCompound tankNbt = new NbtCompound();
+				tank.write(tankNbt);
+				ScreenNetworking.of(handler, NetworkSide.SERVER).send(packetId, bufConsumer -> {
+					bufConsumer.writeNbt(tankNbt);
+				});
+			}
+		};
+		handler.addTicker(ticker);
 	}
 
 	public Tank getTank() {

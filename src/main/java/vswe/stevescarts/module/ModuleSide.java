@@ -1,6 +1,7 @@
 package vswe.stevescarts.module;
 
 import net.minecraft.text.Text;
+import vswe.stevescarts.util.TextHelper;
 
 public enum ModuleSide {
 	TOP,
@@ -12,6 +13,6 @@ public enum ModuleSide {
 	FRONT;
 
 	public Text asText() {
-		return Text.translatable("module.side.stevescarts." + this.name().toLowerCase());
+		return TextHelper.translatable("module.side.stevescarts." + this.name().toLowerCase());
 	}
 }

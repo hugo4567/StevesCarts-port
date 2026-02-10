@@ -5,7 +5,7 @@ import java.util.function.BiFunction;
 
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import reborncore.common.fluid.FluidValue;
+import vswe.stevescarts.util.FluidValue;
 import vswe.stevescarts.StevesCarts;
 import vswe.stevescarts.entity.CartEntity;
 import vswe.stevescarts.module.addon.BrakeModule;
@@ -18,6 +18,7 @@ import vswe.stevescarts.module.attachment.SeatModule;
 import vswe.stevescarts.module.attachment.TorchPlacerModule;
 import vswe.stevescarts.module.engine.AdvancedThermalEngineModule;
 import vswe.stevescarts.module.engine.CoalEngineModule;
+import vswe.stevescarts.module.engine.CompactSolarEngineModule;
 import vswe.stevescarts.module.engine.SolarEngineModule;
 import vswe.stevescarts.module.engine.ThermalEngineModule;
 import vswe.stevescarts.module.hull.HullData;
@@ -53,6 +54,7 @@ public class StevesCartsModules {
 	public static final ModuleType<CoalEngineModule> TINY_COAL_ENGINE = registerCoalEngine("tiny_coal_engine", 1, 0.5f, 2, ModuleTags.INCOMPATIBLE_WITH_TINY_COAL_ENGINE);
 	public static final ModuleType<CoalEngineModule> COAL_ENGINE = registerCoalEngine("coal_engine", 3, 2.25f, 15, ModuleTags.INCOMPATIBLE_WITH_COAL_ENGINE);
 	public static final ModuleType<SolarEngineModule> SOLAR_ENGINE = registerSolarEngine("solar_engine", 12, 100000L);
+	public static final ModuleType<CompactSolarEngineModule> COMPACT_SOLAR_ENGINE = registerCompactSolarEngine("compact_solar_engine", 8);
 	public static final ModuleType<SolarEngineModule> ADVANCED_SOLAR_ENGINE = registerSolarEngine("advanced_solar_engine", 20, 200000L);
 	public static final ModuleType<ThermalEngineModule> THERMAL_ENGINE = registerThermalEngine("thermal_engine", ThermalEngineModule::new, 28, 1, ModuleTags.INCOMPATIBLE_WITH_THERMAL_ENGINE);
 	public static final ModuleType<ThermalEngineModule> ADVANCED_THERMAL_ENGINE = registerThermalEngine("advanced_thermal_engine", AdvancedThermalEngineModule::new, 58, 2, ModuleTags.INCOMPATIBLE_WITH_ADVANCED_THERMAL_ENGINE);
@@ -93,6 +95,11 @@ public class StevesCartsModules {
 		return Registry.register(ModuleType.REGISTRY, id, new ModuleType<>(((cartEntity, moduleType) -> new SolarEngineModule(cartEntity, moduleType, maxPower)), id, cost, EnumSet.of(ModuleSide.CENTER, ModuleSide.TOP), ModuleGroup.ENGINE, true, false, true, null, null));
 	}
 
+	private static ModuleType<CompactSolarEngineModule> registerCompactSolarEngine(String name, int cost) {
+		Identifier id = StevesCarts.id(name);
+		return Registry.register(ModuleType.REGISTRY, id, new ModuleType<>(CompactSolarEngineModule::new, id, cost, EnumSet.of(ModuleSide.CENTER, ModuleSide.TOP), ModuleGroup.ENGINE, true, false, true, null, null));
+	}
+
 	private static <T extends HullModule> HullModuleType<T> registerHull(String name, BiFunction<CartEntity, ModuleType<T>, T> factory, EnumSet<ModuleSide> sides, HullData hullData) {
 		Identifier id = StevesCarts.id(name);
 		return Registry.register(ModuleType.REGISTRY, id, new HullModuleType<>(factory, id, sides, hullData));
@@ -106,9 +113,8 @@ public class StevesCartsModules {
 		Identifier id = StevesCarts.id(name);
 		return Registry.register(ModuleType.REGISTRY, id, new ModuleType<>(factory, id, cost, sides, ModuleGroup.STORAGE, true, false, false, null, null));
 	}
-
 	private static ModuleType<TankModule> registerRegularTank(String name, int buckets, EnumSet<ModuleSide> sides, int moduleCost, boolean noHullTop) {
 		Identifier id = StevesCarts.id(name);
-		return Registry.register(ModuleType.REGISTRY, id, new ModuleType<>((entity, type) -> new TankModule(entity, type, FluidValue.BUCKET.multiply(buckets)), id, moduleCost, sides, ModuleGroup.STORAGE, true, false, noHullTop, null, null));
+		return Registry.register(ModuleType.REGISTRY, id, new ModuleType<>((entity, type) -> new TankModule(entity, type, buckets * 1000), id, moduleCost, sides, ModuleGroup.STORAGE, true, false, noHullTop, null, null));
 	}
 }

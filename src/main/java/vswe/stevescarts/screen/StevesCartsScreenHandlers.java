@@ -10,11 +10,11 @@ import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 
-import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
+import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 
 public class StevesCartsScreenHandlers {
-	public static final ScreenHandlerType<CartAssemblerHandler> CART_ASSEMBLER = Registry.register(Registry.SCREEN_HANDLER, StevesCarts.id("cart_assembler"), new ExtendedScreenHandlerType<>((syncId, playerInventory, buf) -> new CartAssemblerHandler(syncId, playerInventory, ScreenHandlerContext.EMPTY, getBlockEntity(buf.readBlockPos()))));
-	public static final ExtendedScreenHandlerType<CartHandler> CART = Registry.register(Registry.SCREEN_HANDLER, StevesCarts.id("cart"), new ExtendedScreenHandlerType<>(CartHandler::new));
+	public static final ScreenHandlerType<CartAssemblerHandler> CART_ASSEMBLER = ScreenHandlerRegistry.registerExtended(StevesCarts.id("cart_assembler"), (syncId, playerInventory, buf) -> new CartAssemblerHandler(syncId, playerInventory, ScreenHandlerContext.EMPTY, getBlockEntity(buf.readBlockPos())));
+	public static final ScreenHandlerType<CartHandler> CART = ScreenHandlerRegistry.registerExtended(StevesCarts.id("cart"), CartHandler::new);
 
 	public static void init() {
 	}

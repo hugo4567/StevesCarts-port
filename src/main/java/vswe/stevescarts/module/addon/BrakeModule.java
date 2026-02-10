@@ -1,5 +1,7 @@
 package vswe.stevescarts.module.addon;
 
+import vswe.stevescarts.util.TextHelper;
+
 import io.github.cottonmc.cotton.gui.networking.NetworkSide;
 import io.github.cottonmc.cotton.gui.networking.ScreenNetworking;
 import io.github.cottonmc.cotton.gui.widget.WLabel;
@@ -53,7 +55,7 @@ public class BrakeModule extends CartModule implements Configurable, Toggleable 
 	public void configure(WPlainPanel panel, CartHandler handler, PlayerEntity player) {
 		WLabel label = new WLabel(this.getType().getTranslationText());
 		panel.add(label, 0, 0);
-		WCustomButton brakeButton = new WCustomButton(WCustomButton.FG_STOP, WCustomButton.FG_CONTINUE, Text.translatable("screen.stevescarts.cart.brake"));
+		WCustomButton brakeButton = new WCustomButton(WCustomButton.FG_STOP, WCustomButton.FG_CONTINUE, TextHelper.translatable("screen.stevescarts.cart.brake"));
 		panel.add(brakeButton, 0, 10, 24, 12);
 		brakeButton.setOnClick(() -> {
 			brakeButton.changeTexture();
@@ -62,7 +64,7 @@ public class BrakeModule extends CartModule implements Configurable, Toggleable 
 		if (this.active) {
 			brakeButton.changeTexture();
 		}
-		WCustomButton reverseButton = new WCustomButton(WCustomButton.FG_REVERSE, Text.translatable("screen.stevescarts.cart.reverse"));
+		WCustomButton reverseButton = new WCustomButton(WCustomButton.FG_REVERSE, TextHelper.translatable("screen.stevescarts.cart.reverse"));
 		panel.add(reverseButton, 0, 23, 24, 12);
 		reverseButton.setOnClick(() -> ScreenNetworking.of(handler, NetworkSide.CLIENT).send(PACKET_REVERSE, buf -> {}));
 		panel.setSize(30, 50);

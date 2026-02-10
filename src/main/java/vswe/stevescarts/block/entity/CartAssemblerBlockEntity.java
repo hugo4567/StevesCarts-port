@@ -1,5 +1,7 @@
 package vswe.stevescarts.block.entity;
 
+import vswe.stevescarts.util.TextHelper;
+
 import java.util.Collections;
 
 import org.jetbrains.annotations.Nullable;
@@ -25,7 +27,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
 public class CartAssemblerBlockEntity extends BlockEntity implements SidedInventory, InventoryProvider {
-	public static final Text NAME = Text.translatable("screen.stevescarts.cart_assembler");
+	public static final Text NAME = TextHelper.translatable("screen.stevescarts.cart_assembler");
 	public static final int SIZE;
 	public static final int HULL_SLOT = 0;
 	public static final int ENGINE_SLOT_START = 1;

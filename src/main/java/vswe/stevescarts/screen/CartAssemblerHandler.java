@@ -1,5 +1,8 @@
 package vswe.stevescarts.screen;
 
+import vswe.stevescarts.util.FloatSupplier;
+import vswe.stevescarts.util.TextHelper;
+
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashSet;
@@ -57,7 +60,7 @@ public class CartAssemblerHandler extends SyncedGuiDescription {
 		setRootPanel(rootPanel);
 		WPlayerInvPanel playerInventoryPanel = this.createPlayerInventoryPanel(false);
 		this.addCentered(playerInventoryPanel, rootPanel.getHeight() - playerInventoryPanel.getHeight());
-		WAssembleButton assembleButton = new WAssembleButton(Text.translatable("screen.stevescarts.cart_assembler.assemble"));
+		WAssembleButton assembleButton = new WAssembleButton(TextHelper.translatable("screen.stevescarts.cart_assembler.assemble"));
 		rootPanel.add(assembleButton, 328, 147, 79, 9);
 		WItemSlot hullSlot = WItemSlot.outputOf(this.blockInventory, CartAssemblerBlockEntity.HULL_SLOT);
 		hullSlot.setFilter(stack -> ModuleType.belongsToGroup(stack, ModuleGroup.HULL));
@@ -95,7 +98,14 @@ public class CartAssemblerHandler extends SyncedGuiDescription {
 				}
 			}
 			return types;
-		}, 187, 120, (e) -> blockEntity.getRoll(), (e) -> blockEntity.getYaw(), this.blockEntity::getWorld);
+		}, 187, 120, 
+		   new FloatSupplier() { 
+		       public float getAsFloat() { return blockEntity.getRoll(); } 
+		   }, 
+		   new FloatSupplier() { 
+		       public float getAsFloat() { return blockEntity.getYaw(); } 
+		   }, 
+		   this.blockEntity::getWorld);
 		this.addCentered(cart, 4);
 
 		assembleButton.setOnClick(() -> ScreenNetworking.of(this, NetworkSide.CLIENT).send(PACKET_ASSEMBLE_CLICK, (buf) -> {
@@ -134,7 +144,7 @@ public class CartAssemblerHandler extends SyncedGuiDescription {
 					if (!ModuleType.belongsToGroup(stack2, ModuleGroup.HULL)) {
 						invalid = true;
 						info.successStatus();
-						info.setInfoText(Text.translatable("screen.stevescarts.cart_assembler.getting_started"));
+						info.setInfoText(TextHelper.translatable("screen.stevescarts.cart_assembler.getting_started"));
 						break;
 					}
 				}
@@ -147,7 +157,7 @@ public class CartAssemblerHandler extends SyncedGuiDescription {
 			}
 
 			if (hull == null) {
-				info.setStatusText(Text.empty());
+				info.setStatusText(TextHelper.empty());
 				cart.refresh();
 				return;
 			}
@@ -156,11 +166,11 @@ public class CartAssemblerHandler extends SyncedGuiDescription {
 			int modCap = hull.getHullData().modularCapacity();
 			int cost = types.stream().mapToInt(ModuleType::getModuleCost).sum();
 
-			MutableText totalText = Text.empty().copy();
-			totalText.append(Text.translatable("screen.stevescarts.cart_assembler.total_cost", cost)).append("\n");
-			totalText.append(Text.translatable("screen.stevescarts.cart_assembler.hull_capacity", modCap)).append("\n");
-			totalText.append(Text.translatable("screen.stevescarts.cart_assembler.complexity_cap", complexityMax)).append("\n");
-			totalText.append(Text.translatable("screen.stevescarts.cart_assembler.time", "00:00:00"));
+			MutableText totalText = TextHelper.empty().copy();
+			totalText.append(TextHelper.translatable("screen.stevescarts.cart_assembler.total_cost", cost)).append("\n");
+			totalText.append(TextHelper.translatable("screen.stevescarts.cart_assembler.hull_capacity", modCap)).append("\n");
+			totalText.append(TextHelper.translatable("screen.stevescarts.cart_assembler.complexity_cap", complexityMax)).append("\n");
+			totalText.append(TextHelper.translatable("screen.stevescarts.cart_assembler.time", "00:00:00"));
 
 			info.setInfoText(totalText);
 
@@ -178,7 +188,7 @@ public class CartAssemblerHandler extends SyncedGuiDescription {
 							continue;
 						}
 						invalid = true;
-						info.setErrText(Text.translatable("screen.stevescarts.cart_assembler.duplicate_module", type.getTranslationText()));
+						info.setErrText(TextHelper.asMutable(TextHelper.translatable("screen.stevescarts.cart_assembler.duplicate_module", type.getTranslationText())));
 						break;
 					}
 				}
@@ -195,7 +205,7 @@ public class CartAssemblerHandler extends SyncedGuiDescription {
 				for (Map.Entry<ModuleSide, List<ModuleType<?>>> entry : sideMap.entrySet()) {
 					if (entry.getValue().size() > 1) {
 						invalid = true;
-						info.setErrText(Text.translatable("screen.stevescarts.cart_assembler.duplicate_side", entry.getValue().get(0).getTranslationText(), entry.getValue().get(1).getTranslationText(), entry.getKey().asText()));
+						info.setErrText(TextHelper.asMutable(TextHelper.translatable("screen.stevescarts.cart_assembler.duplicate_side", entry.getValue().get(0).getTranslationText(), entry.getValue().get(1).getTranslationText(), entry.getKey().asText())));
 						break;
 					}
 				}
@@ -206,7 +216,7 @@ public class CartAssemblerHandler extends SyncedGuiDescription {
 				for (ModuleType<?> type : types) {
 					if (type.getModuleCost() > complexityMax) {
 						invalid = true;
-						info.setErrText(Text.translatable("screen.stevescarts.cart_assembler.too_complex_module", type.getTranslationText(), hull.getTranslationText()));
+						info.setErrText(TextHelper.asMutable(TextHelper.translatable("screen.stevescarts.cart_assembler.too_complex_module", type.getTranslationText(), hull.getTranslationText())));
 						break;
 					}
 				}
@@ -216,7 +226,7 @@ public class CartAssemblerHandler extends SyncedGuiDescription {
 			if (!invalid) {
 				if (cost > modCap) {
 					invalid = true;
-					info.setErrText(Text.translatable("screen.stevescarts.cart_assembler.excess_capacity", hull.getTranslationText()));
+					info.setErrText(TextHelper.asMutable(TextHelper.translatable("screen.stevescarts.cart_assembler.excess_capacity", hull.getTranslationText())));
 				}
 			}
 
@@ -228,7 +238,7 @@ public class CartAssemblerHandler extends SyncedGuiDescription {
 						continue;
 					}
 					invalid = true;
-					info.setErrText(Text.translatable("screen.stevescarts.cart_assembler.incompatible", type.getTranslationText(), incompat.getTranslationText()));
+					info.setErrText(TextHelper.asMutable(TextHelper.translatable("screen.stevescarts.cart_assembler.incompatible", type.getTranslationText(), incompat.getTranslationText())));
 				}
 			}
 
@@ -240,7 +250,9 @@ public class CartAssemblerHandler extends SyncedGuiDescription {
 						continue;
 					}
 					invalid = true;
-					info.setErrText(Text.translatable("screen.stevescarts.cart_assembler.missing_tag_requirement", type.getTranslationText(), entry.getIntValue(), ModuleTags.toText(entry.getKey())));
+					MutableText errorText = TextHelper.asMutable(TextHelper.translatable("screen.stevescarts.cart_assembler.missing_tag_requirement", type.getTranslationText(), ModuleTags.toText(entry.getKey())));
+					errorText.append(" " + entry.getIntValue());
+					info.setErrText(errorText);
 				}
 			}
 
@@ -260,13 +272,13 @@ public class CartAssemblerHandler extends SyncedGuiDescription {
 
 		rootPanel.validate(this);
 	}
-
 	public static void handleAssembleClick(ServerPlayerEntity player) {
 		ScreenHandler screenHandler = player.currentScreenHandler;
-		if (!(screenHandler instanceof CartAssemblerHandler handler)) {
+		if (!(screenHandler instanceof CartAssemblerHandler)) {
 			StevesCarts.LOGGER.error("Received assemble click packet from non-cart assembler screen handler");
 			return;
 		}
+		CartAssemblerHandler handler = (CartAssemblerHandler) screenHandler;
 		if (!handler.blockInventory.getStack(CartAssemblerBlockEntity.OUTPUT_SLOT).isEmpty()) {
 			return;
 		}

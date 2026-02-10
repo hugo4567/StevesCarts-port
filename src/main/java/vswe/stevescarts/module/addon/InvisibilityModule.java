@@ -1,5 +1,7 @@
 package vswe.stevescarts.module.addon;
 
+import vswe.stevescarts.util.TextHelper;
+
 import io.github.cottonmc.cotton.gui.networking.NetworkSide;
 import io.github.cottonmc.cotton.gui.networking.ScreenNetworking;
 import io.github.cottonmc.cotton.gui.widget.WPlainPanel;
@@ -26,7 +28,7 @@ public class InvisibilityModule extends CartModule implements Configurable {
 	public void configure(WPlainPanel panel, CartHandler handler, PlayerEntity player) {
 //		WLabel label = new WLabel(this.getType().getTranslationText()); TODO
 //		panel.add(label, 0, 0);
-		WCustomButton button = new WCustomButton(WCustomButton.FG_INVISIBLE, WCustomButton.FG_UNINVISIBLE, Text.translatable("screen.stevescarts.cart.invisibility"));
+		WCustomButton button = new WCustomButton(WCustomButton.FG_INVISIBLE, WCustomButton.FG_UNINVISIBLE, TextHelper.translatable("screen.stevescarts.cart.invisibility"));
 		panel.add(button, 0, 0, 25, 10);
 		if (this.getEntity().isInvisible()) {
 			button.changeTexture();

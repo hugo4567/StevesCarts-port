@@ -16,7 +16,7 @@ import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.Quaternion;
 import net.minecraft.util.math.Vec3f;
-import net.minecraft.util.math.floatprovider.FloatSupplier;
+import vswe.stevescarts.util.FloatSupplier;
 import net.minecraft.world.World;
 
 import net.fabricmc.api.EnvType;
