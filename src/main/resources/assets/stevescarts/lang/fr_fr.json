@@ -29,5 +29,6 @@
   "module.stevescarts.railer": "Poseur de rails",
   "module.stevescarts.large_railer": "Grand poseur de rails",
   "module.stevescarts.bridge_builder": "Constructeur de pont",
-  "module.stevescarts.hydrator": "Hydratateur"
+  "module.stevescarts.hydrator": "Hydratateur",
+  "module.stevescarts.lawn_mower": "Tondeuse à gazon"
 }

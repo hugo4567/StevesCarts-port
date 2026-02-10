@@ -1,6 +1,7 @@
 - Modules
     - [x] Coal Engine
     - [x] Solar Engine
+    - [x] Compact Solar Engine (PHASE 2 - Module 1) ✅
     - [x] Side Chests
     - [x] Top Chest
     - [x] Front Chest
