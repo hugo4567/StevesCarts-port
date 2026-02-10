@@ -33,5 +33,6 @@
   "module.stevescarts.bridge_builder": "Constructeur de pont",
   "module.stevescarts.hydrator": "Hydratateur",
   "module.stevescarts.lawn_mower": "Tondeuse à gazon",
+  "module.stevescarts.experience": "Collecteur d'expérience",
   "module.stevescarts.track_remover": "Enlever les rails"
 }

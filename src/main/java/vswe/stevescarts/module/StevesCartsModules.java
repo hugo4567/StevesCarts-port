@@ -18,6 +18,7 @@ import vswe.stevescarts.module.attachment.SeatModule;
 import vswe.stevescarts.module.attachment.TorchPlacerModule;
 import vswe.stevescarts.module.attachment.TrackRemoverModule;
 import vswe.stevescarts.module.realtimer.LawnMowerModule;
+import vswe.stevescarts.module.realtimer.ExperienceModule;
 import vswe.stevescarts.module.engine.AdvancedThermalEngineModule;
 import vswe.stevescarts.module.engine.CoalEngineModule;
 import vswe.stevescarts.module.engine.CompactSolarEngineModule;
@@ -73,6 +74,7 @@ public class StevesCartsModules {
 	public static final ModuleType<BridgeBuilderModule> BRIDGE_BUILDER = register("bridge_builder", new ModuleType<>(BridgeBuilderModule::new, StevesCarts.id("bridge_builder"), 12, EnumSet.of(ModuleSide.FRONT), ModuleGroup.ATTACHMENT, true, false, false, null, null));
 	public static final ModuleType<HydratorModule> HYDRATOR = register("hydrator", new ModuleType<>(HydratorModule::new, StevesCarts.id("hydrator"), 6, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ATTACHMENT, false, false, false, null, Util.make(new Object2IntOpenHashMap<>(), m -> m.put(ModuleTags.TANKS, 1))));
 	public static final ModuleType<LawnMowerModule> LAWN_MOWER = register("lawn_mower", new ModuleType<>(LawnMowerModule::new, StevesCarts.id("lawn_mower"), 8, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ATTACHMENT, false, false, false, null, null));
+	public static final ModuleType<ExperienceModule> EXPERIENCE = register("experience", new ModuleType<>(ExperienceModule::new, StevesCarts.id("experience"), 10, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ATTACHMENT, false, false, false, null, null));
 	public static final ModuleType<TrackRemoverModule> TRACK_REMOVER = register("track_remover", new ModuleType<>(TrackRemoverModule::new, StevesCarts.id("track_remover"), 12, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ATTACHMENT, false, false, false, null, null));
 
 	public static final ModuleType<BrakeModule> BRAKE = register("brake", new ModuleType<>(BrakeModule::new, StevesCarts.id("brake"), 12, EnumSet.of(ModuleSide.RIGHT), ModuleGroup.ADDON, true, false, false, null, null));
