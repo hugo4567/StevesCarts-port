@@ -20,6 +20,7 @@ import vswe.stevescarts.module.realtimer.LawnMowerModule;
 import vswe.stevescarts.module.engine.AdvancedThermalEngineModule;
 import vswe.stevescarts.module.engine.CoalEngineModule;
 import vswe.stevescarts.module.engine.CompactSolarEngineModule;
+import vswe.stevescarts.module.engine.CreativeEngineModule;
 import vswe.stevescarts.module.engine.SolarEngineModule;
 import vswe.stevescarts.module.engine.ThermalEngineModule;
 import vswe.stevescarts.module.hull.HullData;
@@ -56,6 +57,7 @@ public class StevesCartsModules {
 	public static final ModuleType<CoalEngineModule> COAL_ENGINE = registerCoalEngine("coal_engine", 3, 2.25f, 15, ModuleTags.INCOMPATIBLE_WITH_COAL_ENGINE);
 	public static final ModuleType<SolarEngineModule> SOLAR_ENGINE = registerSolarEngine("solar_engine", 12, 100000L);
 	public static final ModuleType<CompactSolarEngineModule> COMPACT_SOLAR_ENGINE = registerCompactSolarEngine("compact_solar_engine", 8);
+	public static final ModuleType<CreativeEngineModule> CREATIVE_ENGINE = registerCreativeEngine("creative_engine", 0);
 	public static final ModuleType<SolarEngineModule> ADVANCED_SOLAR_ENGINE = registerSolarEngine("advanced_solar_engine", 20, 200000L);
 	public static final ModuleType<ThermalEngineModule> THERMAL_ENGINE = registerThermalEngine("thermal_engine", ThermalEngineModule::new, 28, 1, ModuleTags.INCOMPATIBLE_WITH_THERMAL_ENGINE);
 	public static final ModuleType<ThermalEngineModule> ADVANCED_THERMAL_ENGINE = registerThermalEngine("advanced_thermal_engine", AdvancedThermalEngineModule::new, 58, 2, ModuleTags.INCOMPATIBLE_WITH_ADVANCED_THERMAL_ENGINE);
@@ -100,6 +102,11 @@ public class StevesCartsModules {
 	private static ModuleType<CompactSolarEngineModule> registerCompactSolarEngine(String name, int cost) {
 		Identifier id = StevesCarts.id(name);
 		return Registry.register(ModuleType.REGISTRY, id, new ModuleType<>(CompactSolarEngineModule::new, id, cost, EnumSet.of(ModuleSide.CENTER, ModuleSide.TOP), ModuleGroup.ENGINE, true, false, true, null, null));
+	}
+
+	private static ModuleType<CreativeEngineModule> registerCreativeEngine(String name, int cost) {
+		Identifier id = StevesCarts.id(name);
+		return Registry.register(ModuleType.REGISTRY, id, new ModuleType<>(CreativeEngineModule::new, id, cost, EnumSet.of(ModuleSide.CENTER, ModuleSide.TOP), ModuleGroup.ENGINE, true, false, true, null, null));
 	}
 
 	private static <T extends HullModule> HullModuleType<T> registerHull(String name, BiFunction<CartEntity, ModuleType<T>, T> factory, EnumSet<ModuleSide> sides, HullData hullData) {
