@@ -22,7 +22,7 @@
     - [ ] Basic Farmer
     - [ ] Basic Wood Cutter
     - [ ] Hydrator
-    - [ ] Height Controller
+    - [x] Height Controller (PHASE 2 - Module 11) ✅
     - [ ] Fertilizer
     - [ ] Entity Detector: Animal
     - [ ] Fluid Sensors
@@ -34,8 +34,8 @@
     - [x] Brake Handle
     - [ ] Advanced Shooter
     - [ ] Shooter
-    - [ ] Dynamite Carrier
-    - [ ] Cleaning Machine
+    - [x] Dynamite Carrier (PHASE 2 - Module 14) ✅
+    - [x] Cleaning Machine (PHASE 2 - Module 8) ✅
     - [ ] Extreme Melter
     - [ ] Divine Shield
     - [ ] Melter
@@ -60,7 +60,7 @@
     - [ ] Projectile: Fire Charge
     - [ ] Firework display
     - [ ] Crop: Nether Wart
-    - [ ] Cage
+    - [x] Cage (PHASE 2 - Module 12) ✅
     - [ ] Compact Solar Engine
     - [ ] Internal Tank
     - [x] Mechanical Pig
@@ -98,7 +98,7 @@
     - [ ] Smelter
     - [ ] Projectile: Cake
     - [ ] Trick-or-Treat Cake Server
-    - [ ] Cake Server
+    - [x] Cake Server (PHASE 2 - Module 13) ✅
     - [ ] Creative Incinerator
     - [ ] Creative Supplies
     - [ ] Color Randomizer
@@ -125,9 +125,9 @@
     - [ ] Advanced Detector Rail
 ## Progress Summary
 
-**Current Status**: 45/124 modules (36.3%)
+**Current Status**: 49/124 modules (39.5%)
 - Phase 1 (Foundations): COMPLETE ✅
-- Phase 2 (Simple Modules): IN PROGRESS - 10/31 modules
+- Phase 2 (Simple Modules): IN PROGRESS - 14/31 modules
   - Module 1: Compact Solar Engine ✅
   - Module 2: Lawn Mower ✅
   - Module 3: Creative Engine ✅
@@ -138,6 +138,10 @@
   - Module 8: Cleaning Machine ✅
   - Module 9: Pumpkin Chariot ✅
   - Module 10: Internal Storage ✅
+  - Module 11: Height Controller ✅
+  - Module 12: Cage ✅
+  - Module 13: Cake Server ✅
+  - Module 14: Dynamite Carrier ✅
 
 **Recent Commits**:
 - [PHASE2] Port: Creative Tank module
