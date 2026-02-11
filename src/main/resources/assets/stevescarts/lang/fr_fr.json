@@ -4,11 +4,13 @@
   "module.stevescarts.reinforced_hull": "Coque renforcée",
   "module.stevescarts.mechanical_pig": "Cochon mécanique",
   "module.stevescarts.galgadorian_hull": "Coque galgadorienne",
+  "module.stevescarts.pumpkin_chariot": "Chariot citrouille",
   "module.stevescarts.creative_hull": "Coque créative",
   "module.stevescarts.front_chest": "Coffre avant",
   "module.stevescarts.top_chest": "Coffre supérieur",
   "module.stevescarts.side_chests": "Coffres latéraux",
   "module.stevescarts.extracting_chests": "Coffres extracteurs",
+  "module.stevescarts.internal_storage": "Stockage interne",
   "module.stevescarts.front_tank": "Réservoir avant",
   "module.stevescarts.top_tank": "Réservoir supérieur",
   "module.stevescarts.side_tanks": "Réservoirs latéraux",
@@ -34,5 +36,11 @@
   "module.stevescarts.hydrator": "Hydratateur",
   "module.stevescarts.lawn_mower": "Tondeuse à gazon",
   "module.stevescarts.experience": "Collecteur d'expérience",
-  "module.stevescarts.track_remover": "Enlever les rails"
+  "module.stevescarts.track_remover": "Enlever les rails",
+  "module.stevescarts.milker": "Trayeuse",
+  "module.stevescarts.cleaner": "Machine de nettoyage",
+  "module.stevescarts.cage": "Cage",
+  "module.stevescarts.cake_server": "Serveur de gâteaux",
+  "module.stevescarts.dynamite_carrier": "Porteur de dynamite",
+  "module.stevescarts.height_controller": "Contrôleur de hauteur"
 }
