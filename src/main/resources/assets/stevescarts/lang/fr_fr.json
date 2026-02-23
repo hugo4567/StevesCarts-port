@@ -42,5 +42,9 @@
   "module.stevescarts.cage": "Cage",
   "module.stevescarts.cake_server": "Serveur de gâteaux",
   "module.stevescarts.dynamite_carrier": "Porteur de dynamite",
-  "module.stevescarts.height_controller": "Contrôleur de hauteur"
+  "module.stevescarts.height_controller": "Contrôleur de hauteur",
+  "module.stevescarts.freezer": "Congélateur",
+  "module.stevescarts.incinerator": "Incinérateur",
+  "module.stevescarts.egg_basket": "Panier à œufs",
+  "module.stevescarts.gift_storage": "Stockage de cadeaux"
 }

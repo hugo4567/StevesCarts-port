@@ -43,6 +43,10 @@
   "module.stevescarts.cake_server": "Cake Server",
   "module.stevescarts.dynamite_carrier": "Dynamite Carrier",
   "module.stevescarts.height_controller": "Height Controller",
+  "module.stevescarts.freezer": "Freezer",
+  "module.stevescarts.incinerator": "Incinerator",
+  "module.stevescarts.egg_basket": "Egg Basket",
+  "module.stevescarts.gift_storage": "Gift Storage",
 
   "item.stevescarts.wooden_wheels": "Wooden Wheels",
   "item.stevescarts.iron_wheels": "Iron Wheels",

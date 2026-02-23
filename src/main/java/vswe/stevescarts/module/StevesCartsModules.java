@@ -25,6 +25,8 @@ import vswe.stevescarts.module.realtimer.CageModule;
 import vswe.stevescarts.module.realtimer.CakeServerModule;
 import vswe.stevescarts.module.realtimer.DynamiteModule;
 import vswe.stevescarts.module.addon.HeightControllerModule;
+import vswe.stevescarts.module.addon.FreezerModule;
+import vswe.stevescarts.module.addon.IncineratorModule;
 import vswe.stevescarts.module.engine.AdvancedThermalEngineModule;
 import vswe.stevescarts.module.engine.CoalEngineModule;
 import vswe.stevescarts.module.engine.CompactSolarEngineModule;
@@ -58,6 +60,8 @@ public class StevesCartsModules {
 	public static final ModuleType<ChestModule> SIDE_CHESTS = registerRegularChest("side_chests", (entity, type) -> new ChestModule(entity, type, 5, 3), EnumSet.of(ModuleSide.LEFT, ModuleSide.RIGHT), 3);
 	public static final ModuleType<ChestModule> EXTRACTING_CHESTS = registerRegularChest("extracting_chests", ExtractingChestsModule::new, EnumSet.of(ModuleSide.LEFT, ModuleSide.RIGHT, ModuleSide.CENTER), 75);
 	public static final ModuleType<ChestModule> INTERNAL_STORAGE = registerRegularChest("internal_storage", (entity, type) -> new ChestModule(entity, type, 3, 3), EnumSet.noneOf(ModuleSide.class), 25);
+	public static final ModuleType<ChestModule> EGG_BASKET = registerRegularChest("egg_basket", (entity, type) -> new ChestModule(entity, type, 6, 4), EnumSet.of(ModuleSide.TOP), 12);
+	public static final ModuleType<ChestModule> GIFT_STORAGE = registerRegularChest("gift_storage", (entity, type) -> new ChestModule(entity, type, 9, 4), EnumSet.of(ModuleSide.TOP), 20);
 	public static final ModuleType<TankModule> TOP_TANK = registerRegularTank("top_tank", 14, EnumSet.of(ModuleSide.TOP), 22, false);
 	public static final ModuleType<TankModule> FRONT_TANK = registerRegularTank("front_tank", 8, EnumSet.of(ModuleSide.FRONT), 15, false);
 	public static final ModuleType<TankModule> SIDE_TANKS = registerRegularTank("side_tanks", 8, EnumSet.of(ModuleSide.LEFT, ModuleSide.RIGHT), 10, false);
@@ -93,6 +97,8 @@ public class StevesCartsModules {
 	public static final ModuleType<BrakeModule> BRAKE = register("brake", new ModuleType<>(BrakeModule::new, StevesCarts.id("brake"), 12, EnumSet.of(ModuleSide.RIGHT), ModuleGroup.ADDON, true, false, false, null, null));
 	public static final ModuleType<InvisibilityModule> INVISIBILITY_CORE = register("invisibility_core", new ModuleType<>(InvisibilityModule::new, StevesCarts.id("invisibility_core"), 21, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
 	public static final ModuleType<HeightControllerModule> HEIGHT_CONTROLLER = register("height_controller", new ModuleType<>(HeightControllerModule::new, StevesCarts.id("height_controller"), 15, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
+	public static final ModuleType<FreezerModule> FREEZER = register("freezer", new ModuleType<>(FreezerModule::new, StevesCarts.id("freezer"), 18, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
+	public static final ModuleType<IncineratorModule> INCINERATOR = register("incinerator", new ModuleType<>(IncineratorModule::new, StevesCarts.id("incinerator"), 20, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
 
 	public static void init() {
 		ModuleTags.init();
