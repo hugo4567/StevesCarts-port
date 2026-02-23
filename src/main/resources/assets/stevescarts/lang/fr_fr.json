@@ -46,5 +46,9 @@
   "module.stevescarts.freezer": "Congélateur",
   "module.stevescarts.incinerator": "Incinérateur",
   "module.stevescarts.egg_basket": "Panier à œufs",
-  "module.stevescarts.gift_storage": "Stockage de cadeaux"
+  "module.stevescarts.gift_storage": "Stockage de cadeaux",
+  "module.stevescarts.power_observer": "Observateur de puissance",
+  "module.stevescarts.colorizer": "Coloriseur",
+  "module.stevescarts.note_sequencer": "Séquenceur de notes",
+  "module.stevescarts.color_randomizer": "Randomiseur de couleur"
 }

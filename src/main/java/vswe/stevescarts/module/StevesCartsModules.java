@@ -27,6 +27,10 @@ import vswe.stevescarts.module.realtimer.DynamiteModule;
 import vswe.stevescarts.module.addon.HeightControllerModule;
 import vswe.stevescarts.module.addon.FreezerModule;
 import vswe.stevescarts.module.addon.IncineratorModule;
+import vswe.stevescarts.module.addon.PowerObserverModule;
+import vswe.stevescarts.module.addon.ColorizerModule;
+import vswe.stevescarts.module.addon.ColorRandomizerModule;
+import vswe.stevescarts.module.realtimer.NoteSequencerModule;
 import vswe.stevescarts.module.engine.AdvancedThermalEngineModule;
 import vswe.stevescarts.module.engine.CoalEngineModule;
 import vswe.stevescarts.module.engine.CompactSolarEngineModule;
@@ -93,12 +97,16 @@ public class StevesCartsModules {
 	public static final ModuleType<CageModule> CAGE = register("cage", new ModuleType<>(CageModule::new, StevesCarts.id("cage"), 18, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ATTACHMENT, false, false, false, null, null));
 	public static final ModuleType<CakeServerModule> CAKE_SERVER = register("cake_server", new ModuleType<>(CakeServerModule::new, StevesCarts.id("cake_server"), 10, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ATTACHMENT, false, false, false, null, null));
 	public static final ModuleType<DynamiteModule> DYNAMITE = register("dynamite_carrier", new ModuleType<>(DynamiteModule::new, StevesCarts.id("dynamite_carrier"), 30, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ATTACHMENT, false, false, false, null, null));
+	public static final ModuleType<NoteSequencerModule> NOTE_SEQUENCER = register("note_sequencer", new ModuleType<>(NoteSequencerModule::new, StevesCarts.id("note_sequencer"), 25, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ATTACHMENT, false, false, false, null, null));
 
 	public static final ModuleType<BrakeModule> BRAKE = register("brake", new ModuleType<>(BrakeModule::new, StevesCarts.id("brake"), 12, EnumSet.of(ModuleSide.RIGHT), ModuleGroup.ADDON, true, false, false, null, null));
 	public static final ModuleType<InvisibilityModule> INVISIBILITY_CORE = register("invisibility_core", new ModuleType<>(InvisibilityModule::new, StevesCarts.id("invisibility_core"), 21, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
 	public static final ModuleType<HeightControllerModule> HEIGHT_CONTROLLER = register("height_controller", new ModuleType<>(HeightControllerModule::new, StevesCarts.id("height_controller"), 15, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
 	public static final ModuleType<FreezerModule> FREEZER = register("freezer", new ModuleType<>(FreezerModule::new, StevesCarts.id("freezer"), 18, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
 	public static final ModuleType<IncineratorModule> INCINERATOR = register("incinerator", new ModuleType<>(IncineratorModule::new, StevesCarts.id("incinerator"), 20, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
+	public static final ModuleType<PowerObserverModule> POWER_OBSERVER = register("power_observer", new ModuleType<>(PowerObserverModule::new, StevesCarts.id("power_observer"), 15, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
+	public static final ModuleType<ColorizerModule> COLORIZER = register("colorizer", new ModuleType<>(ColorizerModule::new, StevesCarts.id("colorizer"), 12, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
+	public static final ModuleType<ColorRandomizerModule> COLOR_RANDOMIZER = register("color_randomizer", new ModuleType<>(ColorRandomizerModule::new, StevesCarts.id("color_randomizer"), 8, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
 
 	public static void init() {
 		ModuleTags.init();
