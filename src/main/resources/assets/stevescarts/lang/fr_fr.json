@@ -50,5 +50,10 @@
   "module.stevescarts.power_observer": "Observateur de puissance",
   "module.stevescarts.colorizer": "Coloriseur",
   "module.stevescarts.note_sequencer": "Séquenceur de notes",
-  "module.stevescarts.color_randomizer": "Randomiseur de couleur"
+  "module.stevescarts.color_randomizer": "Randomiseur de couleur",
+  "module.stevescarts.chunk_loader": "Chargeur de chunks",
+  "module.stevescarts.fertilizer": "Fertiliseur",
+  "module.stevescarts.divine_shield": "Bouclier divin",
+  "module.stevescarts.melter": "Fondeur",
+  "module.stevescarts.melter_extreme": "Fondeur extrême"
 }

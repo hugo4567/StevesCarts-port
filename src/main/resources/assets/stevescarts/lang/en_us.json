@@ -51,6 +51,11 @@
   "module.stevescarts.colorizer": "Colorizer",
   "module.stevescarts.note_sequencer": "Note Sequencer",
   "module.stevescarts.color_randomizer": "Color Randomizer",
+  "module.stevescarts.chunk_loader": "Chunk Loader",
+  "module.stevescarts.fertilizer": "Fertilizer",
+  "module.stevescarts.divine_shield": "Divine Shield",
+  "module.stevescarts.melter": "Melter",
+  "module.stevescarts.melter_extreme": "Extreme Melter",
 
   "item.stevescarts.wooden_wheels": "Wooden Wheels",
   "item.stevescarts.iron_wheels": "Iron Wheels",

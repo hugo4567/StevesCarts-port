@@ -30,6 +30,11 @@ import vswe.stevescarts.module.addon.IncineratorModule;
 import vswe.stevescarts.module.addon.PowerObserverModule;
 import vswe.stevescarts.module.addon.ColorizerModule;
 import vswe.stevescarts.module.addon.ColorRandomizerModule;
+import vswe.stevescarts.module.addon.ChunkLoaderModule;
+import vswe.stevescarts.module.addon.FertilizerModule;
+import vswe.stevescarts.module.addon.DivineShieldModule;
+import vswe.stevescarts.module.addon.MelterModule;
+import vswe.stevescarts.module.addon.MelterExtremeModule;
 import vswe.stevescarts.module.realtimer.NoteSequencerModule;
 import vswe.stevescarts.module.engine.AdvancedThermalEngineModule;
 import vswe.stevescarts.module.engine.CoalEngineModule;
@@ -107,6 +112,11 @@ public class StevesCartsModules {
 	public static final ModuleType<PowerObserverModule> POWER_OBSERVER = register("power_observer", new ModuleType<>(PowerObserverModule::new, StevesCarts.id("power_observer"), 15, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
 	public static final ModuleType<ColorizerModule> COLORIZER = register("colorizer", new ModuleType<>(ColorizerModule::new, StevesCarts.id("colorizer"), 12, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
 	public static final ModuleType<ColorRandomizerModule> COLOR_RANDOMIZER = register("color_randomizer", new ModuleType<>(ColorRandomizerModule::new, StevesCarts.id("color_randomizer"), 8, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
+	public static final ModuleType<ChunkLoaderModule> CHUNK_LOADER = register("chunk_loader", new ModuleType<>(ChunkLoaderModule::new, StevesCarts.id("chunk_loader"), 45, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
+	public static final ModuleType<FertilizerModule> FERTILIZER = register("fertilizer", new ModuleType<>(FertilizerModule::new, StevesCarts.id("fertilizer"), 25, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
+	public static final ModuleType<DivineShieldModule> DIVINE_SHIELD = register("divine_shield", new ModuleType<>(DivineShieldModule::new, StevesCarts.id("divine_shield"), 40, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
+	public static final ModuleType<MelterModule> MELTER = register("melter", new ModuleType<>(MelterModule::new, StevesCarts.id("melter"), 12, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
+	public static final ModuleType<MelterExtremeModule> MELTER_EXTREME = register("melter_extreme", new ModuleType<>(MelterExtremeModule::new, StevesCarts.id("melter_extreme"), 22, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
 
 	public static void init() {
 		ModuleTags.init();
