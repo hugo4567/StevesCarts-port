@@ -76,7 +76,10 @@ public class StevesCartsModules {
 	public static final ModuleType<TankModule> SIDE_TANKS = registerRegularTank("side_tanks", 8, EnumSet.of(ModuleSide.LEFT, ModuleSide.RIGHT), 10, false);
 	public static final ModuleType<TankModule> OPEN_TANK = registerRegularTank("open_tank", 14, EnumSet.of(ModuleSide.TOP), 22, false);
 	public static final ModuleType<TankModule> ADVANCED_TANK = registerRegularTank("advanced_tank", 32, EnumSet.of(ModuleSide.CENTER, ModuleSide.TOP), 54, true);
-	public static final ModuleType<CreativeTankModule> CREATIVE_TANK = register("creative_tank", new ModuleType<>(CreativeTankModule::new, StevesCarts.id("creative_tank"), 0, EnumSet.noneOf(ModuleSide.class), ModuleGroup.STORAGE, false, false, false, null, null));
+	public static final ModuleType<CreativeTankModule> CREATIVE_TANK = register(
+		"creative_tank",
+		new ModuleType<>(CreativeTankModule::new, StevesCarts.id("creative_tank"), 0, EnumSet.noneOf(ModuleSide.class), ModuleGroup.STORAGE, false, false, false, null, null)
+	);
 
 	public static final ModuleType<CoalEngineModule> TINY_COAL_ENGINE = registerCoalEngine("tiny_coal_engine", 1, 0.5f, 2, ModuleTags.INCOMPATIBLE_WITH_TINY_COAL_ENGINE);
 	public static final ModuleType<CoalEngineModule> COAL_ENGINE = registerCoalEngine("coal_engine", 3, 2.25f, 15, ModuleTags.INCOMPATIBLE_WITH_COAL_ENGINE);
