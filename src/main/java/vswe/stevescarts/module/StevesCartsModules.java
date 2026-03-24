@@ -85,7 +85,10 @@ public class StevesCartsModules {
 		"compact_solar_engine",
 		new ModuleType<>(CompactSolarEngineModule::new, StevesCarts.id("compact_solar_engine"), 40, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ENGINE, false, false, false, null, null)
 	);
-	public static final ModuleType<CreativeEngineModule> CREATIVE_ENGINE = registerCreativeEngine("creative_engine", 0);
+	public static final ModuleType<CreativeEngineModule> CREATIVE_ENGINE = register(
+		"creative_engine",
+		new ModuleType<>(CreativeEngineModule::new, StevesCarts.id("creative_engine"), 50, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ENGINE, false, false, false, null, null)
+	);
 	public static final ModuleType<SolarEngineModule> ADVANCED_SOLAR_ENGINE = registerSolarEngine("advanced_solar_engine", 20, 200000L);
 	public static final ModuleType<ThermalEngineModule> THERMAL_ENGINE = registerThermalEngine("thermal_engine", ThermalEngineModule::new, 28, 1, ModuleTags.INCOMPATIBLE_WITH_THERMAL_ENGINE);
 	public static final ModuleType<ThermalEngineModule> ADVANCED_THERMAL_ENGINE = registerThermalEngine("advanced_thermal_engine", AdvancedThermalEngineModule::new, 58, 2, ModuleTags.INCOMPATIBLE_WITH_ADVANCED_THERMAL_ENGINE);
