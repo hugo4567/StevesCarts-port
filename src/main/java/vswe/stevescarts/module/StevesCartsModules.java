@@ -132,6 +132,11 @@ public class StevesCartsModules {
 	public static final ModuleType<AdvancedShooterModule> ADVANCED_SHOOTER = register("advanced_shooter", new ModuleType<>(AdvancedShooterModule::new, StevesCarts.id("advanced_shooter"), 40, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
 	public static final ModuleType<TreeTapModule> TREE_TAP = register("tree_tap", new ModuleType<>(TreeTapModule::new, StevesCarts.id("tree_tap"), 25, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
 
+	public static final ModuleType<InternalTankModule> INTERNAL_TANK = register(
+		"internal_tank",
+		new ModuleType<>(InternalTankModule::new, StevesCarts.id("internal_tank"), 30, EnumSet.noneOf(ModuleSide.class), ModuleGroup.STORAGE, false, false, false, null, null)
+	);
+
 	public static void init() {
 		ModuleTags.init();
 	}
