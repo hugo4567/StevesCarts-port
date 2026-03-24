@@ -118,6 +118,14 @@ public class StevesCartsModules {
 	public static final ModuleType<MelterModule> MELTER = register("melter", new ModuleType<>(MelterModule::new, StevesCarts.id("melter"), 12, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
 	public static final ModuleType<MelterExtremeModule> MELTER_EXTREME = register("melter_extreme", new ModuleType<>(MelterExtremeModule::new, StevesCarts.id("melter_extreme"), 22, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
 
+	public static final ModuleType<AdvancedFarmerModule> ADVANCED_FARMER = register(
+		"advanced_farmer",
+		new ModuleType<>(AdvancedFarmerModule::new, StevesCarts.id("advanced_farmer"), 30, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null)
+	);
+	public static final ModuleType<LiquidCleanerModule> LIQUID_CLEANER = register("liquid_cleaner", new ModuleType<>(LiquidCleanerModule::new, StevesCarts.id("liquid_cleaner"), 35, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
+	public static final ModuleType<AdvancedShooterModule> ADVANCED_SHOOTER = register("advanced_shooter", new ModuleType<>(AdvancedShooterModule::new, StevesCarts.id("advanced_shooter"), 40, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
+	public static final ModuleType<TreeTapModule> TREE_TAP = register("tree_tap", new ModuleType<>(TreeTapModule::new, StevesCarts.id("tree_tap"), 25, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ADDON, false, false, false, null, null));
+
 	public static void init() {
 		ModuleTags.init();
 	}

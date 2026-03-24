@@ -55,5 +55,9 @@
   "module.stevescarts.fertilizer": "Fertiliseur",
   "module.stevescarts.divine_shield": "Bouclier divin",
   "module.stevescarts.melter": "Fondeur",
-  "module.stevescarts.melter_extreme": "Fondeur extrême"
+  "module.stevescarts.melter_extreme": "Fondeur extrême",
+  "module.stevescarts.advanced_farmer": "Module Fermier Avancé",
+  "module.stevescarts.liquid_cleaner": "Module Nettoyeur de Liquides",
+  "module.stevescarts.advanced_shooter": "Module Tireur Avancé",
+  "module.stevescarts.tree_tap": "Module Collecteur de Sève"
 }

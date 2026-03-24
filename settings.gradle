@@ -6,5 +6,23 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+        maven {
+            name = 'Minecraft'
+            url = 'https://libraries.minecraft.net/'
+        }
+        maven {
+            name = 'PaperMC'
+            url = 'https://repo.papermc.io/repository/maven-public/'
+        }
+        maven {
+            name = 'FabricLoom'
+            url = 'https://maven.fabricmc.net/fabric-loom/'
+        }
+        maven {
+            name = 'Modrinth'
+            url = 'https://api.modrinth.com/maven'
+        }
+        mavenLocal()
     }
 }
+rootProject.name = 'StevesCarts-1.19'
