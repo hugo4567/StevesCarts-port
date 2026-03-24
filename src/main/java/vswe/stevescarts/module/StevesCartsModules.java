@@ -81,7 +81,10 @@ public class StevesCartsModules {
 	public static final ModuleType<CoalEngineModule> TINY_COAL_ENGINE = registerCoalEngine("tiny_coal_engine", 1, 0.5f, 2, ModuleTags.INCOMPATIBLE_WITH_TINY_COAL_ENGINE);
 	public static final ModuleType<CoalEngineModule> COAL_ENGINE = registerCoalEngine("coal_engine", 3, 2.25f, 15, ModuleTags.INCOMPATIBLE_WITH_COAL_ENGINE);
 	public static final ModuleType<SolarEngineModule> SOLAR_ENGINE = registerSolarEngine("solar_engine", 12, 100000L);
-	public static final ModuleType<CompactSolarEngineModule> COMPACT_SOLAR_ENGINE = registerCompactSolarEngine("compact_solar_engine", 8);
+	public static final ModuleType<CompactSolarEngineModule> COMPACT_SOLAR_ENGINE = register(
+		"compact_solar_engine",
+		new ModuleType<>(CompactSolarEngineModule::new, StevesCarts.id("compact_solar_engine"), 40, EnumSet.noneOf(ModuleSide.class), ModuleGroup.ENGINE, false, false, false, null, null)
+	);
 	public static final ModuleType<CreativeEngineModule> CREATIVE_ENGINE = registerCreativeEngine("creative_engine", 0);
 	public static final ModuleType<SolarEngineModule> ADVANCED_SOLAR_ENGINE = registerSolarEngine("advanced_solar_engine", 20, 200000L);
 	public static final ModuleType<ThermalEngineModule> THERMAL_ENGINE = registerThermalEngine("thermal_engine", ThermalEngineModule::new, 28, 1, ModuleTags.INCOMPATIBLE_WITH_THERMAL_ENGINE);
