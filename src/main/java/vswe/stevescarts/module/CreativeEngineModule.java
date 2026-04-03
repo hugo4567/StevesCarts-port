@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import vswe.stevescarts.entity.CartEntity;
 
-public class CreativeEngineModule extends ModuleBase {
+public class CreativeEngineModule extends Module {
 
     public CreativeEngineModule(CartEntity cart) {
         super(cart);

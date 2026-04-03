@@ -1,0 +1,27 @@
+[22:30:07] [main/INFO]: Loading Minecraft 1.18.2 with Fabric Loader 0.13.3
+[22:30:09] [main/INFO]: Loading 3 mods:
+	- fabricloader 0.13.3
+	- java 17
+	- minecraft 1.18.2
+[22:30:09] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/hugo4/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.11.2+mixin.0.8.5/f4ae569d559b5e3244b67321945261d83ff7ad8e/sponge-mixin-0.11.2+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
+[22:30:27] [main/ERROR]: Minecraft has crashed!
+net.fabricmc.loader.impl.FormattedException: java.lang.IllegalAccessError: class net.minecraft.world.gen.chunk.ChunkGeneratorSettings tried to access protected method 'net.minecraft.world.gen.noise.SimpleNoiseRouter net.minecraft.world.gen.densityfunction.DensityFunctions.method_41103(net.minecraft.world.gen.chunk.GenerationShapeConfig, boolean)' (net.minecraft.world.gen.chunk.ChunkGeneratorSettings and net.minecraft.world.gen.densityfunction.DensityFunctions are in unnamed module of loader net.fabricmc.loader.impl.launch.knot.KnotClassLoader @7e19ebf0)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:418) ~[fabric-loader-0.13.3.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:77) [fabric-loader-0.13.3.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) [fabric-loader-0.13.3.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) [dev-launch-injector-0.2.1+build.8.jar:?]
+Caused by: java.lang.IllegalAccessError: class net.minecraft.world.gen.chunk.ChunkGeneratorSettings tried to access protected method 'net.minecraft.world.gen.noise.SimpleNoiseRouter net.minecraft.world.gen.densityfunction.DensityFunctions.method_41103(net.minecraft.world.gen.chunk.GenerationShapeConfig, boolean)' (net.minecraft.world.gen.chunk.ChunkGeneratorSettings and net.minecraft.world.gen.densityfunction.DensityFunctions are in unnamed module of loader net.fabricmc.loader.impl.launch.knot.KnotClassLoader @7e19ebf0)
+	at net.minecraft.world.gen.chunk.ChunkGeneratorSettings.createSurfaceSettings(ChunkGeneratorSettings.java:130) ~[minecraft-merged-project-root-1.18.2-net.fabricmc.yarn.1_18_2.1.18.2+build.2-v2.jar:?]
+	at net.minecraft.world.gen.chunk.ChunkGeneratorSettings.<clinit>(ChunkGeneratorSettings.java:81) ~[minecraft-merged-project-root-1.18.2-net.fabricmc.yarn.1_18_2.1.18.2+build.2-v2.jar:?]
+	at net.minecraft.util.registry.BuiltinRegistries.method_30566(BuiltinRegistries.java:86) ~[minecraft-merged-project-root-1.18.2-net.fabricmc.yarn.1_18_2.1.18.2+build.2-v2.jar:?]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[?:?]
+	at net.minecraft.util.registry.BuiltinRegistries.<clinit>(BuiltinRegistries.java:85) ~[minecraft-merged-project-root-1.18.2-net.fabricmc.yarn.1_18_2.1.18.2+build.2-v2.jar:?]
+	at net.minecraft.util.registry.Registry.<clinit>(Registry.java:291) ~[minecraft-merged-project-root-1.18.2-net.fabricmc.yarn.1_18_2.1.18.2+build.2-v2.jar:?]
+	at net.minecraft.Bootstrap.initialize(Bootstrap.java:49) ~[minecraft-merged-project-root-1.18.2-net.fabricmc.yarn.1_18_2.1.18.2+build.2-v2.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:153) ~[minecraft-merged-project-root-1.18.2-net.fabricmc.yarn.1_18_2.1.18.2+build.2-v2.jar:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:416) ~[fabric-loader-0.13.3.jar:?]
+	... 3 more

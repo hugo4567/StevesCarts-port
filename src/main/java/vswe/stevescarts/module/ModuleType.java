@@ -28,8 +28,11 @@ import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
 public class ModuleType<T extends CartModule> implements ItemConvertible {
 	public static final Registry<ModuleType<?>> REGISTRY = (Registry<ModuleType<?>>) (Object) FabricRegistryBuilder.createSimple(ModuleType.class, StevesCarts.id("module_type")).buildAndRegister();
 
-	// TODO
-	private final RegistryEntry.Reference<ModuleType<?>> registryEntry = null;
+	/**
+	 * Entrée du registre pour ce type de module.
+	 * Initialisée lors de l'enregistrement du module.
+	 */
+	private RegistryEntry.Reference<ModuleType<?>> registryEntry;
 	private final BiFunction<CartEntity, ModuleType<T>, T> factory;
 	private final Identifier id;
 	private final ModuleItem item;

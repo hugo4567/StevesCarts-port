@@ -26,7 +26,10 @@ import net.minecraft.util.Identifier;
 
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 
-// TODO
+/**
+ * Moteur au charbon - Consomme du carburant pour générer de la puissance.
+ * Support pour plusieurs slots de carburant avec multiplicateur d'efficacité.
+ */
 public class CoalEngineModule extends EngineModule {
 	private final int fuelSlots;
 	private final float fuelMultiplier;

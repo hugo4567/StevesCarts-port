@@ -82,17 +82,26 @@ public class CartAssemblerBlockEntity extends BlockEntity implements SidedInvent
 
 	@Override
 	public int[] getAvailableSlots(Direction side) {
-		return new int[0]; // TODO
+		// Retourner tous les slots sauf l'output
+		int[] slots = new int[SIZE - 1];
+		for (int i = 0; i < SIZE - 1; i++) {
+			slots[i] = i;
+		}
+		return slots;
 	}
 
 	@Override
 	public boolean canInsert(int slot, ItemStack stack, @Nullable Direction dir) {
-		return false; // TODO
+		// Interdire l'insertion dans l'output et le fuel sauf depuis le bas
+		if (slot == OUTPUT_SLOT) return false;
+		if (slot == FUEL_SLOT) return dir != Direction.DOWN;
+		return true;
 	}
 
 	@Override
 	public boolean canExtract(int slot, ItemStack stack, Direction dir) {
-		return false; // TODO
+		// Permettre l'extraction de l'output seulement
+		return slot == OUTPUT_SLOT;
 	}
 
 	@Override

@@ -17,6 +17,7 @@ public class StevesCartsScreenHandlers {
 	public static final ScreenHandlerType<CartHandler> CART = ScreenHandlerRegistry.registerExtended(StevesCarts.id("cart"), CartHandler::new);
 
 	public static void init() {
+		// Initialisation des gestionnaires d'écran
 	}
 
 	private static CartAssemblerBlockEntity getBlockEntity(BlockPos pos) {

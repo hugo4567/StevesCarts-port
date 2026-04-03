@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import vswe.stevescarts.entity.CartEntity;
 
-public class InternalTankModule extends ModuleBase {
+public class InternalTankModule extends Module {
 
     public InternalTankModule(CartEntity cart) {
         super(cart);

@@ -7,6 +7,7 @@ import vswe.stevescarts.module.ModuleType;
 import vswe.stevescarts.module.StevesCartsModules;
 import vswe.stevescarts.screen.CartHandler;
 import vswe.stevescarts.util.FluidValue;
+import vswe.stevescarts.util.TextHelper;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
@@ -33,7 +34,7 @@ public class CreativeTankModule extends TankModule {
 		WLabel label = new WLabel(StevesCartsModules.CREATIVE_TANK.getTranslationText());
 		panel.add(label, 0, 0);
 		
-		String modeText = switch (mode) {
+		String modeTextKey = switch (mode) {
 			case 0 -> "screen.stevescarts.cart.mode.any_fluid";
 			case 1 -> "screen.stevescarts.cart.mode.water";
 			case 2 -> "screen.stevescarts.cart.mode.lava";
@@ -41,7 +42,7 @@ public class CreativeTankModule extends TankModule {
 			default -> "screen.stevescarts.cart.mode.any_fluid";
 		};
 		
-		WLabel modeLabel = new WLabel(modeText);
+		WLabel modeLabel = new WLabel(TextHelper.translatable(modeTextKey));
 		panel.add(modeLabel, 0, 12);
 		
 		panel.setSize(100, 30);

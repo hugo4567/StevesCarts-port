@@ -17,8 +17,18 @@ public class TreeTapModule extends CartModule implements Configurable, Toggleabl
 		super(minecart, type);
 	}
 
-	@Override
+	// @Override
 	public void tick() {
 		// Implement tree tapping logic here
+	}
+
+	// @Override
+	public void configure(io.github.cottonmc.cotton.gui.widget.WPlainPanel panel, vswe.stevescarts.screen.CartHandler handler, net.minecraft.entity.player.PlayerEntity player) {
+		// Configuration panel for tree tap
+	}
+
+	// @Override
+	public boolean isActive() {
+		return true; // Always active by default
 	}
 }

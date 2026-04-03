@@ -13,7 +13,14 @@ import net.minecraft.util.Formatting;
 public class TextHelper {
 
     /**
-     * CrÃ©e un Text traduisible Ã  partir d'une clÃ© de traduction
+     * Crée un Text littéral à partir d'une String
+     */
+    public static MutableText literal(String text) {
+        return new LiteralText(text);
+    }
+    
+    /**
+     * Crée un Text traduisible à partir d'une clé de traduction
      */
     public static Text translatable(String key) {
         return new TranslatableText(key);

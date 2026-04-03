@@ -78,7 +78,17 @@ public class CartItem extends Item {
 			tooltip.add(PRESS_SHIFT);
 			return;
 		}
-		// TODO
+		// Afficher les modules du chariot
+		Collection<CartModule> modules = ModuleStorage.read(stack);
+		if (modules.isEmpty()) {
+			tooltip.add(TextHelper.formatted(TextHelper.translatable("tooltip.stevescarts.empty_cart"), Formatting.GRAY));
+			return;
+		}
+		
+		tooltip.add(TextHelper.formatted(TextHelper.literal("Modules:"), Formatting.GOLD));
+		for (CartModule module : modules) {
+			tooltip.add(TextHelper.literal("  " + module.getType().getId().getPath()));
+		}
 	}
 
 	@Override

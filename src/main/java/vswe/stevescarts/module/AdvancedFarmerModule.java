@@ -5,18 +5,18 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import vswe.stevescarts.entity.CartEntity;
 
-public class AdvancedFarmerModule extends ModuleBase {
+public class AdvancedFarmerModule extends Module {
 
     public AdvancedFarmerModule(CartEntity cart) {
         super(cart);
     }
 
-    @Override
+    // @Override
     public void onInteract(PlayerEntity player, Hand hand, ItemStack stack) {
         // Logic for interacting with the module
     }
 
-    @Override
+    // @Override
     public void update() {
         // Logic for updating the module each tick
     }

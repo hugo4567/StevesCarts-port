@@ -18,9 +18,11 @@ public abstract class CartModule {
 	}
 
 	public void readFromNbt(NbtCompound nbt) {
+		// Lecture des données NBT
 	}
 
 	public void writeToNbt(NbtCompound nbt) {
+		// Écriture des données NBT
 	}
 
 	public int getId() {
@@ -68,6 +70,10 @@ public abstract class CartModule {
 	}
 
 	public void onActivate() {
+	}
+
+	public int getConsumption(boolean isMoving) {
+		return 0;
 	}
 
 	protected BlockPos getRailPos() {

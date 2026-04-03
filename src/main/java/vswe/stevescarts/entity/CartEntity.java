@@ -30,6 +30,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.vehicle.MinecartEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketByteBuf;
@@ -139,7 +140,11 @@ public class CartEntity extends MinecartEntity {
 	}
 	public void dropItems(DamageSource damageSource) {
 		this.kill();
-		// TODO
+		// Lâcher tous les modules du chariot
+		for (CartModule module : this.modules.values()) {
+			ItemStack stack = module.getType().asItem().getDefaultStack();
+			this.dropStack(stack);
+		}
 	}
 
 	public boolean shouldRenderTop() {

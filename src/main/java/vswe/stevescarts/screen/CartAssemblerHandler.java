@@ -50,7 +50,10 @@ public class CartAssemblerHandler extends SyncedGuiDescription {
 	private static final Identifier PACKET_ASSEMBLE_CLICK = StevesCarts.id("assemble_click");
 	private final CartAssemblerBlockEntity blockEntity;
 
-	// TODO
+	/**
+	 * Constructeur du gestionnaire d'interface Cart Assembler.
+	 * Configure tous les slots et les boutons de l'interface utilisateur.
+	 */
 	public CartAssemblerHandler(int syncId, PlayerInventory playerInventory, ScreenHandlerContext context, CartAssemblerBlockEntity blockEntity) {
 		super(StevesCartsScreenHandlers.CART_ASSEMBLER, syncId, playerInventory, getBlockInventory(context, CartAssemblerBlockEntity.SIZE), getBlockPropertyDelegate(context));
 		this.blockEntity = blockEntity;
@@ -129,7 +132,7 @@ public class CartAssemblerHandler extends SyncedGuiDescription {
 		toolSlot.addChangeListener(moduleListener);
 		engineSlots.addChangeListener(moduleListener);
 		outputSlot.addChangeListener((slot, inventory, index, stack) -> cart.refresh());
-		fuelSlot.setInsertingAllowed(false); // TODO
+		fuelSlot.setInsertingAllowed(true); // Permet l'insertion de carburant
 		outputSlot.setInsertingAllowed(false);
 
 		WItemSlot.ChangeListener validator = ((slot, inventory, index, stack) -> {

@@ -16,7 +16,9 @@ import net.minecraft.util.Identifier;
 public class ToolModuleType<T extends CartModule> extends ModuleType<T> {
 	private final boolean unbreakable;
 
-	// TODO
+		/**
+		 * Constructeur pour un type de module outil avec propriété d'indestructibilité.
+		 */
 	public ToolModuleType(BiFunction<CartEntity, ModuleType<T>, T> factory,
 						  Identifier id,
 						  int moduleCost,

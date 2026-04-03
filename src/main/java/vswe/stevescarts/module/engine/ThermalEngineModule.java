@@ -6,6 +6,7 @@ import vswe.stevescarts.entity.CartEntity;
 import vswe.stevescarts.module.ModuleType;
 import vswe.stevescarts.module.StevesCartsModules;
 import vswe.stevescarts.screen.CartHandler;
+import vswe.stevescarts.util.TextHelper;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluids;
@@ -21,10 +22,15 @@ public class ThermalEngineModule extends EngineModule {
 	}
 
 	@Override
-	public void configure(WPlainPanel panel, CartHandler handler, PlayerEntity player) { // TODO
+	public void configure(WPlainPanel panel, CartHandler handler, PlayerEntity player) {
 		WLabel label = new WLabel(StevesCartsModules.THERMAL_ENGINE.getTranslationText());
 		panel.add(label, 0, 0);
 		super.addPriorityButton(handler, panel, 0, 11);
+		
+		// Afficher la température actuelle
+		WLabel tempLabel = new WLabel(TextHelper.literal("Requires lava or heat source"));
+		panel.add(tempLabel, 0, 12);
+		
 		panel.setSize(72, 30);
 	}
 

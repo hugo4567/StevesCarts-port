@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import vswe.stevescarts.entity.CartEntity;
 
-public class CompactSolarEngineModule extends ModuleBase {
+public class CompactSolarEngineModule extends Module {
 
     public CompactSolarEngineModule(CartEntity cart) {
         super(cart);

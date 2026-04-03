@@ -21,4 +21,13 @@ public class LiquidCleanerModule extends CartModule implements Configurable, Tog
 	public void tick() {
 		// Implement fluid cleaning logic here
 	}
+	@Override
+	public void configure(io.github.cottonmc.cotton.gui.widget.WPlainPanel panel, vswe.stevescarts.screen.CartHandler handler, net.minecraft.entity.player.PlayerEntity player) {
+		// Configuration panel for liquid cleaner
+	}
+
+	@Override
+	public boolean isActive() {
+		return true; // Always active by default
+	}
 }

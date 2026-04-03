@@ -69,5 +69,10 @@ public class CreativeEngineModule extends EngineModule {
 	protected String getDiscriminator() {
 		return "creative";
 	}
+
+	public int getFuelConsumption() {
+		// Consommation de carburant nulle pour le moteur créatif (puissance infinie)
+		return 0;
+	}
 }
 

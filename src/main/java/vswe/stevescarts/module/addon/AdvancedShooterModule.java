@@ -21,4 +21,14 @@ public class AdvancedShooterModule extends CartModule implements Configurable, T
 	public void tick() {
 		// Implement shooting logic here
 	}
+
+	@Override
+	public void configure(io.github.cottonmc.cotton.gui.widget.WPlainPanel panel, vswe.stevescarts.screen.CartHandler handler, net.minecraft.entity.player.PlayerEntity player) {
+		// Configuration panel for advanced shooter
+	}
+
+	@Override
+	public boolean isActive() {
+		return true; // Always active by default
+	}
 }

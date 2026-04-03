@@ -128,7 +128,6 @@ public class ModuleRenderDispatcher implements SimpleSynchronousResourceReloadLi
 		register(StevesCartsModules.BRIDGE_BUILDER, new SingleModelRenderer(new ToolPlateModel(id("textures/modules/attachment/tool_plate.png"))));
 
 		register(StevesCartsModules.BRAKE, new SingleModelRenderer(new LeverModel(id("textures/modules/addon/red_lever.png"))));
-
 		StevesCarts.LOGGER.info("Registered " + renderers.size() + " module renderers");
 	}
 

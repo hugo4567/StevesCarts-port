@@ -15,6 +15,7 @@ import net.fabricmc.api.ModInitializer;
 
 public class StevesCarts implements ModInitializer {
 	public static final String MODID = "stevescarts";
+	public static final String MOD_ID = "stevescarts";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 
 	public static Identifier id(String s) {
