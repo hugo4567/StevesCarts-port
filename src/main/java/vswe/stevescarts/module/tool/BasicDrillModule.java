@@ -53,7 +53,7 @@ public class BasicDrillModule extends CartModule implements Configurable, Worker
                 BlockState state = getEntity().world.getBlockState(drillPos);
                 
                 // Check if block can be drilled
-                if (!state.getHardness(getEntity().world, drillPos).equals(-1.0F)) {  // Not bedrock
+                if (state.getHardness(getEntity().world, drillPos) >= 0) {  // Not bedrock
                     getEntity().world.breakBlock(drillPos, true);
                     blocksDestroyed++;
                 }

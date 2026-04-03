@@ -4,7 +4,6 @@ import io.github.cottonmc.cotton.gui.widget.WLabel;
 import io.github.cottonmc.cotton.gui.widget.WPlainPanel;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.TallPlantBlock;
-import net.minecraft.block.DoublePlantBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
@@ -55,8 +54,8 @@ public class LawnMowerModule extends CartModule implements Configurable, Worker 
                     BlockPos checkPos = railPos.add(x, height, z);
                     BlockState state = getEntity().world.getBlockState(checkPos);
                     
-                    // Check for grass or tall plants
-                    if (state.getBlock() instanceof TallPlantBlock || state.getBlock() instanceof DoublePlantBlock) {
+                    // Check for tall plants
+                    if (state.getBlock() instanceof TallPlantBlock) {
                         getEntity().world.breakBlock(checkPos, true);
                         grassCut++;
                     }

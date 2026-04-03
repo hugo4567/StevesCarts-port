@@ -3,8 +3,7 @@ package vswe.stevescarts.module.farming;
 import io.github.cottonmc.cotton.gui.widget.WLabel;
 import io.github.cottonmc.cotton.gui.widget.WPlainPanel;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.LogBlock;
-import net.minecraft.block.LeavesBlock;
+
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
@@ -52,12 +51,12 @@ public class GalgadorianWoodCutterModule extends CartModule implements Configura
                     BlockPos checkPos = centerPos.add(x, y, z);
                     BlockState state = getEntity().world.getBlockState(checkPos);
                     // Cut logs
-                    if (state.getBlock() instanceof LogBlock) {
+                    if (state.getBlock().getName().getString().contains("log")) {
                         getEntity().world.breakBlock(checkPos, true);
                         treesCut++;
                     }
                     // Clear leaves
-                    else if (state.getBlock() instanceof LeavesBlock) {
+                    else if (state.getBlock().getName().getString().contains("leaves")) {
                         getEntity().world.breakBlock(checkPos, true);
                     }
                 }

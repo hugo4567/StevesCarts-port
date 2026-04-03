@@ -62,7 +62,7 @@ public class DetectorUnitModule extends CartModule implements Configurable {
         return switch(blockTypeToDetect) {
             case 0 -> true;  // detect any block
             case 1 -> state.getMaterial().isReplaceable();
-            case 2 -> state.getProperties().contains(net.minecraft.block.properties.WoodType.class);
+            case 2 -> false;  // simplified: skip WoodType check
             default -> false;
         };
     }

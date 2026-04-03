@@ -21,7 +21,13 @@ public enum ModuleGroup {
 		public int getMax(ModuleType<? extends HullModule> type) {
 			return type.asHull().getHullData().maxAddons();
 		}
-	};
+	},
+	DETECTOR(8, 0xFF69B4, TextHelper.translatable("module.stevescarts.category.detector.title")),
+	FARMING(7, 0x228B22, TextHelper.translatable("module.stevescarts.category.farming.title")),
+	MANAGER(4, 0x4B0082, TextHelper.translatable("module.stevescarts.category.manager.title")),
+	PROCESSOR(10, 0xFF4500, TextHelper.translatable("module.stevescarts.category.processor.title")),
+	REALTIMER(6, 0x00CED1, TextHelper.translatable("module.stevescarts.category.realtimer.title")),
+	WEAPON(8, 0x8B0000, TextHelper.translatable("module.stevescarts.category.weapon.title"));
 
 	private final int maxMax;
 	private final int textColor;

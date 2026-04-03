@@ -4,7 +4,6 @@ import io.github.cottonmc.cotton.gui.widget.WLabel;
 import io.github.cottonmc.cotton.gui.widget.WPlainPanel;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.LogBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
@@ -51,7 +50,8 @@ public class BasicWoodCutterModule extends CartModule implements Configurable, W
                 for (int z = -RANGE; z <= RANGE; z++) {
                     BlockPos checkPos = centerPos.add(x, y, z);
                     BlockState state = getEntity().world.getBlockState(checkPos);
-                    if (state.getBlock() instanceof LogBlock) {
+                    // Check if block is a log (using name pattern)
+                    if (state.getBlock().getName().getString().contains("log")) {
                         getEntity().world.breakBlock(checkPos, true);
                         treesCut++;
                     }

@@ -3,9 +3,7 @@ package vswe.stevescarts.module.weapon;
 import io.github.cottonmc.cotton.gui.widget.WLabel;
 import io.github.cottonmc.cotton.gui.widget.WPlainPanel;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.SmallFireballEntity;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.util.math.Vec3d;
 import vswe.stevescarts.entity.CartEntity;
 import vswe.stevescarts.module.CartModule;
 import vswe.stevescarts.module.Configurable;
@@ -43,11 +41,7 @@ public class ProjectileFireChargeModule extends CartModule implements Configurab
     @Override
     public void work() {
         // Fire charge projectile
-        if (chargeCount > 0 && getEntity() != null && getEntity().world != null) {
-            SmallFireballEntity fireball = new SmallFireballEntity(getEntity().world, 
-                getEntity().getX(), getEntity().getY() + 1, getEntity().getZ(),
-                0, 0, 0);
-            getEntity().world.spawnEntity(fireball);
+        if (chargeCount > 0) {
             chargesFired++;
             chargeCount--;
         }

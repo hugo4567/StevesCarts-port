@@ -53,7 +53,7 @@ public class IronDrillModule extends CartModule implements Configurable, Worker 
                     BlockPos drillPos = railPos.add(x, height, range);
                     BlockState state = getEntity().world.getBlockState(drillPos);
                     
-                    if (!state.getHardness(getEntity().world, drillPos).equals(-1.0F)) {
+                    if (state.getHardness(getEntity().world, drillPos) >= 0) {
                         getEntity().world.breakBlock(drillPos, true);
                         blocksDestroyed++;
                     }

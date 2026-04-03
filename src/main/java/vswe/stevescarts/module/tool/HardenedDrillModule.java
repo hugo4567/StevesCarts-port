@@ -54,7 +54,7 @@ public class HardenedDrillModule extends CartModule implements Configurable, Wor
                         BlockPos drillPos = railPos.add(x, height, range + z);
                         BlockState state = getEntity().world.getBlockState(drillPos);
                         
-                        if (!state.getHardness(getEntity().world, drillPos).equals(-1.0F)) {
+                        if (state.getHardness(getEntity().world, drillPos) >= 0) {
                             getEntity().world.breakBlock(drillPos, true);
                             blocksDestroyed++;
                         }

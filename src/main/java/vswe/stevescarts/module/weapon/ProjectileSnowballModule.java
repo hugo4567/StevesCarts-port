@@ -3,7 +3,6 @@ package vswe.stevescarts.module.weapon;
 import io.github.cottonmc.cotton.gui.widget.WLabel;
 import io.github.cottonmc.cotton.gui.widget.WPlainPanel;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.SnowballEntity;
 import net.minecraft.nbt.NbtCompound;
 import vswe.stevescarts.entity.CartEntity;
 import vswe.stevescarts.module.CartModule;
@@ -42,10 +41,7 @@ public class ProjectileSnowballModule extends CartModule implements Configurable
     @Override
     public void work() {
         // Fire snowball projectile
-        if (snowballCount > 0 && getEntity() != null && getEntity().world != null) {
-            SnowballEntity snowball = new SnowballEntity(getEntity().world, 
-                getEntity().getX(), getEntity().getY() + 1, getEntity().getZ());
-            getEntity().world.spawnEntity(snowball);
+        if (snowballCount > 0) {
             snowballsFired++;
             snowballCount--;
         }
