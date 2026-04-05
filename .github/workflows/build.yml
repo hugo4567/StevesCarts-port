@@ -29,6 +29,14 @@ jobs:
         
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+
+    - name: Fix SSL settings for Linux CI
+      run: |
+        # Remove Windows-specific SSL workarounds that cause handshake_failure on Linux
+        # (jsse.enableSNIExtension=false disables SNI which most modern Maven repos require)
+        sed -i 's/^org\.gradle\.jvmargs=.*/org.gradle.jvmargs=-Xmx4g/' gradle.properties
+        sed -i '/^systemProp\.jsse\.enableSNIExtension/d' gradle.properties
+        sed -i '/^systemProp\.sun\.security\.ssl\./d' gradle.properties
       
     - name: Build with Gradle
       run: ./gradlew build --no-daemon --stacktrace
