@@ -1,0 +1,9 @@
+org.gradle.jvmargs=-Xmx5G \
+  -Djavax.net.ssl.trustAll=true \
+  -Djdk.internal.httpclient.disableHostnameVerification=true \
+  -Dhttps.protocols=TLSv1.2,TLSv1.3
+
+# Désactiver toutes les vérifications SSL (pour 360 Total Security)
+systemProp.jsse.enableSNIExtension=false
+systemProp.javax.net.ssl.trustAll=true
+systemProp.sun.security.ssl.allowUnsafeRenegotiation=true

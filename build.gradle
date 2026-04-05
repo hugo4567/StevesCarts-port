@@ -1,7 +1,19 @@
-plugins {
-    id 'fabric-loom' version '1.1.5'
-    id 'maven-publish'
+buildscript {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        maven { 
+            url "https://maven.fabricmc.net/"
+        }
+        maven { url "https://repo.gradle.org/gradle/repo" }
+    }
+    dependencies {
+        classpath 'net.fabricmc:fabric-loom:1.1.5'
+    }
 }
+
+apply plugin: 'net.fabricmc.loom'
+apply plugin: 'maven-publish'
 
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
@@ -11,12 +23,18 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
+    
     maven {
         name = "CottonMC"
         url = "https://server.bbkr.space/artifactory/libs-release"
         content {
             includeGroup "io.github.cottonmc"
         }
+    }
+    mavenCentral()
+    maven {
+        name = "Fabric"
+        url = "https://maven.fabricmc.net/"
     }
     maven {
         name = "BuildCraft"
@@ -32,15 +50,23 @@ repositories {
             includeGroup "TechReborn"
         }
     }
+    // CottonMC repository disabled due to SSL issues - using Maven Central instead
+    // maven {
+    //     name = "CottonMC"
+    //     url = "https://server.bbkr.space/artifactory/libs-release"
+    //     content {
+    //         includeGroup "io.github.cottonmc"
+    //     }
+    // }
 }
 
 dependencies {
-    minecraft "com.mojang:minecraft:1.18.2"
-    mappings "net.fabricmc:yarn:1.18.2+build.2:v2"
+    minecraft "com.mojang:minecraft:1.19.2"
+    mappings "net.fabricmc:yarn:1.19.2+build.28:v2"
     modImplementation "net.fabricmc:fabric-loader:0.14.8"
 
-    modImplementation "net.fabricmc.fabric-api:fabric-api:0.48.0+1.18.2"
-    modImplementation include("io.github.cottonmc:LibGui:5.4.0+1.18.2")
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.76.0+1.19.2"
+    modImplementation include("io.github.cottonmc:LibGui:5.4.0+1.19.2")
     modImplementation include("alexiil.mc.lib:libblockattributes-core:0.10.0")
     modImplementation include("alexiil.mc.lib:libblockattributes-fluids:0.10.0")
 }

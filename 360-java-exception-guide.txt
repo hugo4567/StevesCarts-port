@@ -1,0 +1,28 @@
+AJOUTER JAVA EN EXCEPTION DANS 360 TOTAL SECURITY
+==================================================
+
+FICHIERS À AJOUTER:
+------------------
+✓ C:\Program Files\Java\jdk-17\bin\java.exe
+✓ C:\Program Files\Java\jdk-17\bin\javaw.exe
+
+DROITS À DONNER:
+----------------
+✓ Autoriser accès réseau
+✓ Autoriser accès internet  
+✓ Ne pas analyser
+✓ Zone de confiance
+
+OÙ TROUVER:
+-----------
+360 Total Security → Paramètres (⚙️) → 
+    → Exception List / Trust Zone / White List
+
+APRÈS:
+------
+1. Appliquer / OK
+2. Redémarrer 360 si demandé
+3. Dans PowerShell, exécuter:
+   ./gradlew --stop
+   Remove-Item "C:\Users\hugo4\.gradle\caches\fabric-loom\*.lock" -Force
+   ./gradlew build
