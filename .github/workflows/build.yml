@@ -2,9 +2,9 @@ name: Build Steve's Carts 3
 
 on:
   push:
-    branches: [ main, master, dev, 1.19 ]
+    branches: [ main, master, dev, 1.19, 1.18.2-port ]
   pull_request:
-    branches: [ main, master, dev, 1.19 ]
+    branches: [ main, master, dev, 1.19, 1.18.2-port ]
   workflow_dispatch:
 
 jobs:
