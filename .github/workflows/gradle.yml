@@ -33,6 +33,12 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
 
+    - name: Fix SSL settings for Linux CI
+      run: |
+        sed -i 's/^org\.gradle\.jvmargs=.*/org.gradle.jvmargs=-Xmx4g/' gradle.properties
+        sed -i '/^systemProp\.jsse\.enableSNIExtension/d' gradle.properties
+        sed -i '/^systemProp\.sun\.security\.ssl\./d' gradle.properties
+
     - name: Build with Gradle Wrapper
       run: ./gradlew build
 
