@@ -3,7 +3,8 @@ buildscript {
         gradlePluginPortal()
         mavenCentral()
         maven { 
-            url "https://maven.fabricmc.net/"
+            url "http://maven.fabricmc.net/"
+            allowInsecureProtocol = true
         }
         maven { url "https://repo.gradle.org/gradle/repo" }
     }
