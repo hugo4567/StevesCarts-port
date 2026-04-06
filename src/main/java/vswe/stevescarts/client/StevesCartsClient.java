@@ -8,9 +8,15 @@ import vswe.stevescarts.entity.StevesCartsEntities;
 import vswe.stevescarts.entity.network.CartSpawnS2CPacket;
 import vswe.stevescarts.entity.network.CartUpdateS2CPacket;
 import vswe.stevescarts.item.StevesCartsItems;
+import vswe.stevescarts.screen.ActivatorHandler;
+import vswe.stevescarts.screen.CargoHandler;
 import vswe.stevescarts.screen.CartAssemblerHandler;
 import vswe.stevescarts.screen.CartHandler;
+import vswe.stevescarts.screen.DetectorHandler;
+import vswe.stevescarts.screen.DistributorHandler;
+import vswe.stevescarts.screen.LiquidHandler;
 import vswe.stevescarts.screen.StevesCartsScreenHandlers;
+import vswe.stevescarts.screen.UpgradeHandler;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
@@ -38,9 +44,18 @@ public class StevesCartsClient implements ClientModInitializer {
 
 		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(), StevesCartsBlocks.ADVANCED_DETECTOR_RAIL, StevesCartsBlocks.JUNCTION_RAIL);
 
+		// Existing screen handlers
 		//noinspection RedundantTypeArguments
 		HandledScreens.<CartAssemblerHandler, CottonInventoryScreen<CartAssemblerHandler>>register(StevesCartsScreenHandlers.CART_ASSEMBLER, CottonInventoryScreen::new);
 		HandledScreens.<CartHandler, CottonInventoryScreen<CartHandler>>register(StevesCartsScreenHandlers.CART, CottonInventoryScreen::new);
+
+		// New screen handlers
+		HandledScreens.<UpgradeHandler, CottonInventoryScreen<UpgradeHandler>>register(StevesCartsScreenHandlers.UPGRADE, CottonInventoryScreen::new);
+		HandledScreens.<ActivatorHandler, CottonInventoryScreen<ActivatorHandler>>register(StevesCartsScreenHandlers.ACTIVATOR, CottonInventoryScreen::new);
+		HandledScreens.<CargoHandler, CottonInventoryScreen<CargoHandler>>register(StevesCartsScreenHandlers.CARGO, CottonInventoryScreen::new);
+		HandledScreens.<LiquidHandler, CottonInventoryScreen<LiquidHandler>>register(StevesCartsScreenHandlers.LIQUID, CottonInventoryScreen::new);
+		HandledScreens.<DistributorHandler, CottonInventoryScreen<DistributorHandler>>register(StevesCartsScreenHandlers.DISTRIBUTOR, CottonInventoryScreen::new);
+		HandledScreens.<DetectorHandler, CottonInventoryScreen<DetectorHandler>>register(StevesCartsScreenHandlers.DETECTOR, CottonInventoryScreen::new);
 
 		BuiltinItemRendererRegistry.INSTANCE.register(StevesCartsItems.CART, (stack, mode, matrices, vertexConsumerProvider, light, overlay) -> StevesCartsClient.getModuleRenderDispatcher().renderItem(stack, matrices, vertexConsumerProvider, light));
 
