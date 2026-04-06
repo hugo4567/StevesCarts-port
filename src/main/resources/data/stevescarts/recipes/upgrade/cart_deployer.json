@@ -1,0 +1,29 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "R":  {
+                          "item":  "minecraft:rail"
+                      },
+                "P":  {
+                          "item":  "minecraft:piston"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_ingot"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "IRI",
+                    "XPX",
+                    "I#I"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:upgrade"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

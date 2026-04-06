@@ -1,0 +1,26 @@
+﻿{
+    "key":  {
+                "D":  {
+                          "tag":  "c:diamonds"
+                      },
+                "E":  {
+                          "item":  "minecraft:emerald_block"
+                      },
+                "#":  {
+                          "item":  "stevescarts:upgrade"
+                      },
+                "X":  {
+                          "item":  "minecraft:glowstone_dust"
+                      }
+            },
+    "pattern":  [
+                    "DXD",
+                    "XEX",
+                    "D#D"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:upgrade"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

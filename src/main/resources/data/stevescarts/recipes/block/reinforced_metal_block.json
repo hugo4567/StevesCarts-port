@@ -1,0 +1,17 @@
+﻿{
+    "key":  {
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "XXX",
+                    "XXX",
+                    "XXX"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:blockmetalstorage"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

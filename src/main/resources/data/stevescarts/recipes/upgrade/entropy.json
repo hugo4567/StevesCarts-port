@@ -1,0 +1,29 @@
+﻿{
+    "key":  {
+                "D":  {
+                          "tag":  "c:diamonds"
+                      },
+                "L":  {
+                          "item":  "minecraft:lapis_block"
+                      },
+                "#":  {
+                          "item":  "stevescarts:upgrade"
+                      },
+                "G":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "GX ",
+                    "DLD",
+                    " #G"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:upgrade"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

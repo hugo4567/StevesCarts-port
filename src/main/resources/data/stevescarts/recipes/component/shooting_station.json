@@ -1,25 +1,26 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "# #",
-    "#G#",
-    "DXD"
-  ],
-  "key": {
-    "X": {
-      "item": "stevescarts:simple_pcb"
-    },
-    "#": {
-      "tag": "c:redstone_dusts"
-    },
-    "G": {
-      "tag": "c:gold_ingots"
-    },
-    "D": {
-      "item": "minecraft:dispenser"
-    }
-  },
-  "result": {
-    "item": "stevescarts:shooting_station"
-  }
+﻿{
+    "key":  {
+                "G":  {
+                          "item":  "minecraft:gold_ingot"
+                      },
+                "#":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "D":  {
+                          "item":  "minecraft:dispenser"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "# #",
+                    "#G#",
+                    "DXD"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

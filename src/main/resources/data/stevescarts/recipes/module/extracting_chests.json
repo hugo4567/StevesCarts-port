@@ -1,0 +1,29 @@
+﻿{
+    "key":  {
+                "D":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "L":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "C":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "###",
+                    "LCL",
+                    "XDX"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:cartmodule"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

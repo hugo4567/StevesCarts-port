@@ -1,0 +1,20 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:iron_ingot"
+                      },
+                "X":  {
+                          "item":  "stevescarts:cartmodule"
+                      }
+            },
+    "pattern":  [
+                    "X#X",
+                    "# #",
+                    "X#X"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:blockliquidmanager"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

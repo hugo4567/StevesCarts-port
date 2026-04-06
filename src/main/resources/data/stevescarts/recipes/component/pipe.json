@@ -1,18 +1,19 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XXX",
-    "#  "
-  ],
-  "key": {
-    "X": {
-      "tag": "minecraft:stone_crafting_materials"
-    },
-    "#": {
-      "tag": "c:iron_ingots"
-    }
-  },
-  "result": {
-    "item": "stevescarts:pipe"
-  }
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:iron_ingot"
+                      },
+                "X":  {
+                          "tag":  "minecraft:stone_ore_replaceables"
+                      }
+            },
+    "pattern":  [
+                    "XXX",
+                    "#  "
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

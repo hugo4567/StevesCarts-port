@@ -1,0 +1,20 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "X":  {
+                          "item":  "minecraft:flint_and_steel"
+                      }
+            },
+    "pattern":  [
+                    " # ",
+                    "#X#",
+                    " # "
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:cartmodule"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

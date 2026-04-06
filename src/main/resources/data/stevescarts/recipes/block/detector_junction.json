@@ -1,0 +1,26 @@
+﻿{
+    "key":  {
+                "D":  {
+                          "item":  "stevescarts:blockdetector"
+                      },
+                "#":  {
+                          "item":  "minecraft:redstone_torch"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "R":  {
+                          "item":  "minecraft:redstone"
+                      }
+            },
+    "pattern":  [
+                    "# #",
+                    "RDR",
+                    " X "
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:blockdetector"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

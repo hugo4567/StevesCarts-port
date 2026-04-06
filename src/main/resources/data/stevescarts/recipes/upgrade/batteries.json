@@ -1,0 +1,23 @@
+﻿{
+    "key":  {
+                "D":  {
+                          "tag":  "c:diamonds"
+                      },
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "X":  {
+                          "item":  "minecraft:redstone"
+                      }
+            },
+    "pattern":  [
+                    "XXX",
+                    "XDX",
+                    "X#X"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:upgrade"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

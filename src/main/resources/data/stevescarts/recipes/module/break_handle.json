@@ -1,0 +1,26 @@
+﻿{
+    "key":  {
+                "X":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "S":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "#":  {
+                          "item":  "minecraft:iron_ingot"
+                      },
+                "R":  {
+                          "tag":  "c:red_dyes"
+                      }
+            },
+    "pattern":  [
+                    "  R",
+                    "#S ",
+                    "X# "
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:cartmodule"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

@@ -1,15 +1,16 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "##",
-    "##"
-  ],
-  "key": {
-    "#": {
-      "item": "stevescarts:tank_pane"
-    }
-  },
-  "result": {
-    "item": "stevescarts:large_tank_pane"
-  }
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "##",
+                    "##"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

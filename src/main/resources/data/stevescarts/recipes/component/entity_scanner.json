@@ -1,25 +1,26 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "GXG",
-    "#L#",
-    "# #"
-  ],
-  "key": {
-    "X": {
-      "item": "stevescarts:simple_pcb"
-    },
-    "#": {
-      "tag": "c:redstone_dusts"
-    },
-    "G": {
-      "tag": "c:gold_ingots"
-    },
-    "L": {
-      "item": "stevescarts:advanced_pcb"
-    }
-  },
-  "result": {
-    "item": "stevescarts:entity_scanner"
-  }
+﻿{
+    "key":  {
+                "G":  {
+                          "item":  "minecraft:gold_ingot"
+                      },
+                "L":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "#":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "GXG",
+                    "#L#",
+                    "# #"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

@@ -1,0 +1,29 @@
+﻿{
+    "key":  {
+                "L":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "R":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "I":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    " X ",
+                    "LRL",
+                    "I#I"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:upgrade"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

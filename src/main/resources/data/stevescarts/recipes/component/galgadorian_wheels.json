@@ -1,19 +1,20 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " X ",
-    "X#X",
-    " X "
-  ],
-  "key": {
-    "X": {
-      "item": "stevescarts:reinforced_metal"
-    },
-    "#": {
-      "item": "stevescarts:galgadorian_metal"
-    }
-  },
-  "result": {
-    "item": "stevescarts:galgadorian_wheels"
-  }
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    " X ",
+                    "X#X",
+                    " X "
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

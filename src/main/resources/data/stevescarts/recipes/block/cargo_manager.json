@@ -1,0 +1,23 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "R":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "X#X",
+                    "#R#",
+                    "X#X"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:blockcargomanager"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

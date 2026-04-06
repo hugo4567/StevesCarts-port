@@ -1,0 +1,29 @@
+﻿{
+    "key":  {
+                "C":  {
+                          "item":  "minecraft:chest"
+                      },
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "P":  {
+                          "item":  "minecraft:piston"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_ingot"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    " X ",
+                    "PCP",
+                    "I#I"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:upgrade"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

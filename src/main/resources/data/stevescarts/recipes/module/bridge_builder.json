@@ -1,0 +1,26 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "R":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "P":  {
+                          "item":  "minecraft:piston"
+                      },
+                "X":  {
+                          "item":  "minecraft:brick_block"
+                      }
+            },
+    "pattern":  [
+                    " R ",
+                    "X#X",
+                    " P "
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:cartmodule"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

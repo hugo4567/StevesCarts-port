@@ -1,26 +1,26 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XXX",
-    "#R#",
-    "XLX"
-  ],
-  "key": {
-    "X": {
-      "tag": "c:iron_ingots"
-    },
-    "R": {
-      "tag": "c:redstone_dusts"
-    },
-    "#": {
-      "item": "stevescarts:reinforced_metal"
-    },
-    "L": {
-      "item": "stevescarts:advanced_pcb"
-    }
-  },
-  "result": {
-    "count": 2,
-    "item": "stevescarts:blank_upgrade"
-  }
+﻿{
+    "key":  {
+                "L":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "R":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "X":  {
+                          "item":  "minecraft:iron_ingot"
+                      }
+            },
+    "pattern":  [
+                    "XXX",
+                    "#R#",
+                    "XLX"
+                ],
+    "result":  {
+                   "count":  2,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

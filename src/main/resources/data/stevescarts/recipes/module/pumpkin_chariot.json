@@ -1,0 +1,23 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "tag":  "minecraft:planks"
+                      },
+                "P":  {
+                          "item":  "minecraft:pumpkin"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "# #",
+                    "#P#",
+                    "X X"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:cartmodule"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

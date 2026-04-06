@@ -1,22 +1,23 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "X#X",
-    "#G#",
-    "X#X"
-  ],
-  "key": {
-    "X": {
-      "tag": "c:iron_ingots"
-    },
-    "G": {
-      "tag": "c:gold_ingots"
-    },
-    "#": {
-      "tag": "c:redstone_dusts"
-    }
-  },
-  "result": {
-    "item": "stevescarts:simple_pcb"
-  }
+﻿{
+    "key":  {
+                "G":  {
+                          "item":  "minecraft:gold_ingot"
+                      },
+                "#":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "X":  {
+                          "item":  "minecraft:iron_ingot"
+                      }
+            },
+    "pattern":  [
+                    "X#X",
+                    "#G#",
+                    "X#X"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

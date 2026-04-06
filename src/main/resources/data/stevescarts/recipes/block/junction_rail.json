@@ -1,0 +1,20 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "X":  {
+                          "item":  "minecraft:rail"
+                      }
+            },
+    "pattern":  [
+                    " # ",
+                    "#X#",
+                    " # "
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:blockjunction"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

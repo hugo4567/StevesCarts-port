@@ -1,0 +1,15 @@
+﻿{
+    "key":  {
+                "X":  {
+
+                      }
+            },
+    "pattern":  [
+                    "X"
+                ],
+    "result":  {
+                   "count":  2,
+                   "item":  "minecraft:stick"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

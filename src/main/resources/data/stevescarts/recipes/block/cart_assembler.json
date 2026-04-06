@@ -1,0 +1,23 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "tag":  "minecraft:stone_ore_replaceables"
+                      },
+                "R":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "X":  {
+                          "item":  "minecraft:iron_ingot"
+                      }
+            },
+    "pattern":  [
+                    "X#X",
+                    "#X#",
+                    "R#R"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:blockcartassembler"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

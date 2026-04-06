@@ -1,0 +1,20 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "tag":  "c:green_dyes"
+                      },
+                "X":  {
+                          "item":  "minecraft:iron_ingot"
+                      }
+            },
+    "pattern":  [
+                    "#X#",
+                    "#X#",
+                    "#X#"
+                ],
+    "result":  {
+                   "count":  2,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

@@ -1,0 +1,26 @@
+﻿{
+    "key":  {
+                "O":  {
+                          "item":  "minecraft:nether_brick"
+                      },
+                "#":  {
+                          "item":  "minecraft:glowstone"
+                      },
+                "G":  {
+                          "item":  "minecraft:glowstone_dust"
+                      },
+                "X":  {
+                          "item":  "minecraft:furnace"
+                      }
+            },
+    "pattern":  [
+                    "O#O",
+                    "GXG",
+                    "O#O"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:cartmodule"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

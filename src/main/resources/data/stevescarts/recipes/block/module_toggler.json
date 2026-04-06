@@ -1,0 +1,35 @@
+﻿{
+    "key":  {
+                "O":  {
+                          "tag":  "c:orange_dyes"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "G":  {
+                          "item":  "minecraft:gold_ingot"
+                      },
+                "B":  {
+                          "tag":  "c:blue_dyes"
+                      },
+                "#":  {
+                          "tag":  "minecraft:stone_ore_replaceables"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_ingot"
+                      },
+                "R":  {
+                          "item":  "minecraft:redstone"
+                      }
+            },
+    "pattern":  [
+                    "OGB",
+                    "#I#",
+                    "RXR"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:blockactivator"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

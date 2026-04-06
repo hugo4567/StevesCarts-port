@@ -1,37 +1,32 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "conditions": [
-    {
-      "type": "stevescarts:is_event",
-      "event": "easter"
-    }
-  ],
-  "pattern": [
-    "#B#",
-    "#X#",
-    "RMY"
-  ],
-  "key": {
-    "X": {
-      "tag": "c:eggs"
-    },
-    "R": {
-      "tag": "c:red_dyes"
-    },
-    "Y": {
-      "tag": "c:yellow_dyes"
-    },
-    "#": {
-      "item": "minecraft:blaze_powder"
-    },
-    "B": {
-      "item": "minecraft:blaze_rod"
-    },
-    "M": {
-      "item": "minecraft:magma_cream"
-    }
-  },
-  "result": {
-    "item": "stevescarts:burning_easter_egg"
-  }
+﻿{
+    "key":  {
+                "Y":  {
+                          "tag":  "c:yellow_dyes"
+                      },
+                "M":  {
+                          "item":  "minecraft:magma_cream"
+                      },
+                "X":  {
+                          "item":  "minecraft:egg"
+                      },
+                "B":  {
+                          "item":  "minecraft:blaze_rod"
+                      },
+                "#":  {
+                          "item":  "minecraft:blaze_powder"
+                      },
+                "R":  {
+                          "tag":  "c:red_dyes"
+                      }
+            },
+    "pattern":  [
+                    "#B#",
+                    "#X#",
+                    "RMY"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

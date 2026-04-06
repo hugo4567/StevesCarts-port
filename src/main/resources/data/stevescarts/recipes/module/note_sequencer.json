@@ -1,0 +1,26 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:noteblock"
+                      },
+                "R":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "J":  {
+                          "item":  "minecraft:jukebox"
+                      },
+                "X":  {
+                          "tag":  "minecraft:planks"
+                      }
+            },
+    "pattern":  [
+                    "# #",
+                    "#J#",
+                    "XRX"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:cartmodule"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

@@ -1,0 +1,20 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "X":  {
+                          "item":  "stevescarts:blockdetector"
+                      }
+            },
+    "pattern":  [
+                    "###",
+                    "#X#",
+                    "###"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:blockdetector"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

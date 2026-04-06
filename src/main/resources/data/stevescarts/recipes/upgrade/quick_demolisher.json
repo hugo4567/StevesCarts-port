@@ -1,0 +1,26 @@
+﻿{
+    "key":  {
+                "O":  {
+                          "item":  "minecraft:obsidian"
+                      },
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_block"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "OXO",
+                    "XIX",
+                    "O#O"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:upgrade"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

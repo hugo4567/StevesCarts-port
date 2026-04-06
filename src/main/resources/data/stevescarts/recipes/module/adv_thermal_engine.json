@@ -1,0 +1,26 @@
+﻿{
+    "key":  {
+                "O":  {
+                          "item":  "minecraft:nether_brick"
+                      },
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "P":  {
+                          "item":  "minecraft:piston"
+                      },
+                "X":  {
+                          "item":  "stevescarts:cartmodule"
+                      }
+            },
+    "pattern":  [
+                    "OOO",
+                    "#X#",
+                    "P P"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:cartmodule"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

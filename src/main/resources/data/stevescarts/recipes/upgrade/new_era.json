@@ -1,0 +1,26 @@
+﻿{
+    "key":  {
+                "L":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "#":  {
+                          "item":  "stevescarts:upgrade"
+                      },
+                "B":  {
+                          "item":  "minecraft:enchanted_book"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "XBX",
+                    "XLX",
+                    "X#X"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:upgrade"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

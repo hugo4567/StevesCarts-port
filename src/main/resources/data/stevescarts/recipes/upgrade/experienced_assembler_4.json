@@ -1,0 +1,29 @@
+﻿{
+    "key":  {
+                "L":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_ingot"
+                      },
+                "B":  {
+
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    " B ",
+                    "ILI",
+                    "X#X"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:upgrade"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

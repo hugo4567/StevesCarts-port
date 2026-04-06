@@ -1,17 +1,17 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#",
-    "#",
-    "#"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:string"
-    }
-  },
-  "result": {
-    "count": 12,
-    "item": "stevescarts:fuse"
-  }
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:string"
+                      }
+            },
+    "pattern":  [
+                    "#",
+                    "#",
+                    "#"
+                ],
+    "result":  {
+                   "count":  12,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

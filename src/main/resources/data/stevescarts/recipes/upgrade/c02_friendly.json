@@ -1,0 +1,29 @@
+﻿{
+    "key":  {
+                "C":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "P":  {
+                          "item":  "minecraft:piston"
+                      },
+                "F":  {
+                          "tag":  "minecraft:wooden_fences"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    " P ",
+                    "XFX",
+                    "C#C"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:upgrade"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

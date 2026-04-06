@@ -1,20 +1,20 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " X ",
-    "X#X",
-    " X "
-  ],
-  "key": {
-    "X": {
-      "tag": "c:iron_ingots"
-    },
-    "#": {
-      "item": "minecraft:iron_bars"
-    }
-  },
-  "result": {
-    "count": 8,
-    "item": "stevescarts:tank_valve"
-  }
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:iron_bars"
+                      },
+                "X":  {
+                          "item":  "minecraft:iron_ingot"
+                      }
+            },
+    "pattern":  [
+                    " X ",
+                    "X#X",
+                    " X "
+                ],
+    "result":  {
+                   "count":  8,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

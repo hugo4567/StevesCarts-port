@@ -1,0 +1,29 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:iron_ingot"
+                      },
+                "S":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "P":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "A":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    " S ",
+                    " XP",
+                    "#A#"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:cartmodule"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

@@ -1,19 +1,20 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "# #",
-    " X ",
-    "# #"
-  ],
-  "key": {
-    "X": {
-      "tag": "c:iron_ingots"
-    },
-    "#": {
-      "item": "stevescarts:iron_blade"
-    }
-  },
-  "result": {
-    "item": "stevescarts:blade_arm"
-  }
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "X":  {
+                          "item":  "minecraft:iron_ingot"
+                      }
+            },
+    "pattern":  [
+                    "# #",
+                    " X ",
+                    "# #"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

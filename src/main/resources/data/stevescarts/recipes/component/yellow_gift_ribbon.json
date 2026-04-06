@@ -1,25 +1,20 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "conditions": [
-    {
-      "type": "stevescarts:is_event",
-      "event": "christmas"
-    }
-  ],
-  "pattern": [
-    "###",
-    "#X#",
-    "###"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:string"
-    },
-    "X": {
-      "tag": "c:yellow_dyes"
-    }
-  },
-  "result": {
-    "item": "stevescarts:yellow_gift_ribbon"
-  }
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:string"
+                      },
+                "X":  {
+                          "tag":  "c:yellow_dyes"
+                      }
+            },
+    "pattern":  [
+                    "###",
+                    "#X#",
+                    "###"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

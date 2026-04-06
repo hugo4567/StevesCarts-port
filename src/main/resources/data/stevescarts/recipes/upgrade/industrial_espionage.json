@@ -1,0 +1,26 @@
+﻿{
+    "key":  {
+                "G":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "S":  {
+                          "item":  "minecraft:bookshelf"
+                      },
+                "#":  {
+                          "item":  "stevescarts:upgrade"
+                      },
+                "R":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "SRS",
+                    "GRG",
+                    "R#R"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:upgrade"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

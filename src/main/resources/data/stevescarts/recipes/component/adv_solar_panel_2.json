@@ -1,22 +1,23 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#X#",
-    " P ",
-    "#X#"
-  ],
-  "key": {
-    "#": {
-      "item": "stevescarts:solar_panel"
-    },
-    "X": {
-      "tag": "c:iron_ingots"
-    },
-    "P": {
-      "item": "stevescarts:simple_pcb"
-    }
-  },
-  "result": {
-    "item": "stevescarts:advanced_solar_panel"
-  }
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "P":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "X":  {
+                          "item":  "minecraft:iron_ingot"
+                      }
+            },
+    "pattern":  [
+                    "#X#",
+                    " P ",
+                    "#X#"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

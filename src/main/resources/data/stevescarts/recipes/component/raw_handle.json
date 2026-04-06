@@ -1,16 +1,17 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "  X",
-    " X ",
-    "X  "
-  ],
-  "key": {
-    "X": {
-      "tag": "c:iron_ingots"
-    }
-  },
-  "result": {
-    "item": "stevescarts:raw_handle"
-  }
+﻿{
+    "key":  {
+                "X":  {
+                          "item":  "minecraft:iron_ingot"
+                      }
+            },
+    "pattern":  [
+                    "  X",
+                    " X ",
+                    "X  "
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

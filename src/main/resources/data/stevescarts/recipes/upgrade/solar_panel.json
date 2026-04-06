@@ -1,0 +1,26 @@
+﻿{
+    "key":  {
+                "D":  {
+                          "tag":  "c:diamonds"
+                      },
+                "R":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "XXX",
+                    "DRD",
+                    "R#R"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:upgrade"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

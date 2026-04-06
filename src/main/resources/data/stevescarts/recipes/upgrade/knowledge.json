@@ -1,0 +1,29 @@
+﻿{
+    "key":  {
+                "E":  {
+                          "item":  "minecraft:enchanting_table"
+                      },
+                "S":  {
+                          "item":  "minecraft:bookshelf"
+                      },
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "B":  {
+                          "item":  "minecraft:book"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "BSB",
+                    "SES",
+                    "X#X"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:upgrade"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

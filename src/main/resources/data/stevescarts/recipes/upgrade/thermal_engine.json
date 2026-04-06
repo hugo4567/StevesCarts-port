@@ -1,0 +1,32 @@
+﻿{
+    "key":  {
+                "O":  {
+                          "item":  "minecraft:obsidian"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "N":  {
+                          "item":  "minecraft:nether_brick"
+                      },
+                "F":  {
+                          "item":  "minecraft:furnace"
+                      },
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "P":  {
+                          "item":  "minecraft:piston"
+                      }
+            },
+    "pattern":  [
+                    "NXN",
+                    "PFP",
+                    "O#O"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:upgrade"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

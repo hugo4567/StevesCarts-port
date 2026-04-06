@@ -1,0 +1,29 @@
+﻿{
+    "key":  {
+                "G":  {
+                          "item":  "minecraft:glowstone_dust"
+                      },
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_ingot"
+                      },
+                "S":  {
+                          "item":  "minecraft:sign"
+                      },
+                "X":  {
+                          "item":  "minecraft:glass_pane"
+                      }
+            },
+    "pattern":  [
+                    "XXX",
+                    "IGI",
+                    "#S#"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:cartmodule"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

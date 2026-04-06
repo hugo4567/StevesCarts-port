@@ -1,0 +1,23 @@
+﻿{
+    "key":  {
+                "D":  {
+                          "item":  "stevescarts:blockdetector"
+                      },
+                "#":  {
+                          "item":  "minecraft:iron_ingot"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "###",
+                    " D ",
+                    " X "
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:blockdetector"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

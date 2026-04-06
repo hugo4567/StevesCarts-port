@@ -1,0 +1,23 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "R":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "X":  {
+                          "tag":  "minecraft:stone_ore_replaceables"
+                      }
+            },
+    "pattern":  [
+                    "X#X",
+                    "#R#",
+                    "X#X"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:blockdistributor"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

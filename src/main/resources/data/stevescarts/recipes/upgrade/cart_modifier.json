@@ -1,0 +1,26 @@
+﻿{
+    "key":  {
+                "A":  {
+                          "item":  "minecraft:anvil"
+                      },
+                "P":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_ingot"
+                      },
+                "#":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "I I",
+                    "PAP",
+                    "I#I"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:upgrade"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

@@ -1,21 +1,22 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#R",
-    "X#"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:glowstone_dust"
-    },
-    "X": {
-      "tag": "c:iron_ingots"
-    },
-    "R": {
-      "tag": "c:redstone_dusts"
-    }
-  },
-  "result": {
-    "item": "stevescarts:solar_panel"
-  }
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:glowstone_dust"
+                      },
+                "R":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "X":  {
+                          "item":  "minecraft:iron_ingot"
+                      }
+            },
+    "pattern":  [
+                    "#R",
+                    "X#"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

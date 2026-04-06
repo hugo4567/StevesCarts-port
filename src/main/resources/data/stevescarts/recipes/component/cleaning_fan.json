@@ -1,19 +1,20 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#X#",
-    "X X",
-    "#X#"
-  ],
-  "key": {
-    "X": {
-      "tag": "c:redstone_dusts"
-    },
-    "#": {
-      "item": "minecraft:iron_bars"
-    }
-  },
-  "result": {
-    "item": "stevescarts:cleaning_fan"
-  }
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:iron_bars"
+                      },
+                "X":  {
+                          "item":  "minecraft:redstone"
+                      }
+            },
+    "pattern":  [
+                    "#X#",
+                    "X X",
+                    "#X#"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }

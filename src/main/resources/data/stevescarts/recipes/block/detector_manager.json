@@ -1,0 +1,19 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "stevescarts:blockdetector"
+                      },
+                "X":  {
+                          "item":  "stevescarts:modulecomponents"
+                      }
+            },
+    "pattern":  [
+                    "X",
+                    "#"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:blockdetector"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

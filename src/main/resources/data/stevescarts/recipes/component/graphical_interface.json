@@ -1,28 +1,29 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "GDG",
-    "XPX",
-    "#X#"
-  ],
-  "key": {
-    "D": {
-      "tag": "c:diamonds"
-    },
-    "X": {
-      "tag": "c:glass_panes"
-    },
-    "#": {
-      "tag": "c:redstone_dusts"
-    },
-    "G": {
-      "tag": "c:gold_ingots"
-    },
-    "P": {
-      "item": "stevescarts:simple_pcb"
-    }
-  },
-  "result": {
-    "item": "stevescarts:graphical_interface"
-  }
+﻿{
+    "key":  {
+                "D":  {
+                          "tag":  "c:diamonds"
+                      },
+                "#":  {
+                          "item":  "minecraft:redstone"
+                      },
+                "G":  {
+                          "item":  "minecraft:gold_ingot"
+                      },
+                "P":  {
+                          "item":  "stevescarts:modulecomponents"
+                      },
+                "X":  {
+                          "item":  "minecraft:glass_pane"
+                      }
+            },
+    "pattern":  [
+                    "GDG",
+                    "XPX",
+                    "#X#"
+                ],
+    "result":  {
+                   "count":  1,
+                   "item":  "stevescarts:modulecomponents"
+               },
+    "type":  "minecraft:crafting_shaped"
 }
