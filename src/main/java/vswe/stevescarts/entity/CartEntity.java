@@ -297,9 +297,9 @@ public class CartEntity extends MinecartEntity {
 					.orElse(zero);
 		}
 
-		// Cette méthode est requise par l'interface Storage<FluidVariant> en 1.18.2
+		// Cette méthode est requise par l'interface Storage<FluidVariant> en 1.19.2+
 		@Override
-		public Iterator<net.fabricmc.fabric.api.transfer.v1.storage.StorageView<FluidVariant>> iterator(TransactionContext transaction) {
+		public Iterator<net.fabricmc.fabric.api.transfer.v1.storage.StorageView<FluidVariant>> iterator() {
 			return CartEntity.this
 					.getTanks()
 					.flatMap(tank -> {
@@ -310,10 +310,6 @@ public class CartEntity extends MinecartEntity {
 						);
 					})
 					.iterator();
-		}
-				// Cette méthode n'est plus utilisée en 1.18.2 mais nous l'implémentons pour maintenir la compatibilité
-		public Iterator<net.fabricmc.fabric.api.transfer.v1.storage.StorageView<FluidVariant>> iterator() {
-			return iterator(null);
 		}
 	}
 
