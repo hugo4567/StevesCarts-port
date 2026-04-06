@@ -13,7 +13,7 @@ buildscript {
     }
 }
 
-apply plugin: 'net.fabricmc.loom'
+apply plugin: 'net.fabricmc.fabric-loom-remap'
 apply plugin: 'maven-publish'
 
 sourceCompatibility = JavaVersion.VERSION_17
