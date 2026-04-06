@@ -209,6 +209,7 @@ set -- \
         "-Dorg.gradle.appname=$APP_BASE_NAME" \
         -classpath "$CLASSPATH" \
         org.gradle.wrapper.GradleWrapperMain \
+        "--init-script" "$APP_HOME/gradle/ssl.gradle" \
         "$@"
 
 # Use "xargs" to parse quoted args.

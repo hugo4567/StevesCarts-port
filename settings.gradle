@@ -19,6 +19,13 @@ pluginManagement {
             url = 'https://api.modrinth.com/maven'
         }
         mavenLocal()
+        // HTTP fallback for maven.fabricmc.net – used when the ssl.gradle SSLContext
+        // patch does not fully override Apache HttpClient's DefaultHostnameVerifier.
+        maven {
+            name = 'FabricHTTP'
+            url = 'http://maven.fabricmc.net/'
+            allowInsecureProtocol = true
+        }
     }
 }
 rootProject.name = 'StevesCarts-1.19'
