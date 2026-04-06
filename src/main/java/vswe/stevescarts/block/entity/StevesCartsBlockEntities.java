@@ -44,12 +44,12 @@ public class StevesCartsBlockEntities {
         ACTIVATOR = Registry.register(
             Registry.BLOCK_ENTITY_TYPE,
             new Identifier(StevesCarts.MOD_ID, "activator"),
-            FabricBlockEntityTypeBuilder.create(ActivatorBlockEntity::new, StevesCartsBlocks.MODULE_TOGGLER).build()
+            FabricBlockEntityTypeBuilder.create(ActivatorBlockEntity::new, StevesCartsBlocks.MODULE_TOGGLER_BLOCK).build()
         );
         DETECTOR = Registry.register(
             Registry.BLOCK_ENTITY_TYPE,
             new Identifier(StevesCarts.MOD_ID, "detector"),
-            FabricBlockEntityTypeBuilder.create(DetectorBlockEntity::new, StevesCartsBlocks.MODULE_TOGGLER).build()
+            FabricBlockEntityTypeBuilder.create(DetectorBlockEntity::new, StevesCartsBlocks.MODULE_TOGGLER_BLOCK).build()
         );
         UPGRADE = Registry.register(
             Registry.BLOCK_ENTITY_TYPE,

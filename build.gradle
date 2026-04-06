@@ -50,21 +50,29 @@ repositories {
             includeGroup "TechReborn"
         }
     }
+    // CottonMC for LibNinePatch and Jankson
+    maven {
+        name = "CottonMC"
+        url = "https://server.bbkr.space/artifactory/libs-release"
+    }
 }
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings "net.fabricmc:yarn:1.19.2+build.28:v2"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
     
-    // LibGui for GUI - compileOnly (not bundled in JAR)
-    modImplementation files("libs/LibGui-5.4.0+1.19.2.jar")
+    // LibGui for GUI with its dependencies (extracted from JAR-in-JAR)
+    modImplementation files("libs/LibGui-5.4.0+1.18.2.jar")
+    modImplementation files("libs/Jankson-Fabric-4.0.0+j1.2.0.jar")
+    modImplementation files("libs/libninepatch-1.1.0.jar")
+    implementation files("libs/jankson-blue-1.2.1.jar")  // Core jankson library (blue.endless.jankson)
     
-    // LibBlockAttributes - TODO: Check compatibility with 1.19.2
-    // modImplementation include("alexiil.mc.lib:libblockattributes-core:0.10.0")
-    // modImplementation include("alexiil.mc.lib:libblockattributes-fluids:0.10.0")
+    // LibBlockAttributes for fluid handling
+    modImplementation include("alexiil.mc.lib:libblockattributes-core:0.10.0")
+    modImplementation include("alexiil.mc.lib:libblockattributes-fluids:0.10.0")
 }
 
 sourceSets {

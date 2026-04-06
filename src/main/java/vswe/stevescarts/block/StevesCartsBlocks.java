@@ -37,7 +37,7 @@ public class StevesCartsBlocks {
     public static final UpgradeBlock MANAGER_BRIDGE_UPGRADE = registerBlockAndItem("manager_bridge_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
     public static final UpgradeBlock MODULE_INPUT_UPGRADE = registerBlockAndItem("module_input_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
     public static final UpgradeBlock MODULE_KNOWLEDGE_UPGRADE = registerBlockAndItem("module_knowledge_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
-    public static final Block MODULE_TOGGLER = registerBlockAndItem("module_toggler", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5F)));
+    public static final Block MODULE_TOGGLER_BLOCK = registerBlockAndItem("module_toggler_block", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5F)));
     public static final UpgradeBlock NEW_ERA_UPGRADE = registerBlockAndItem("new_era_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
     public static final UpgradeBlock POWER_CRYSTAL_UPGRADE = registerBlockAndItem("power_crystal_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
     public static final UpgradeBlock PRODUCTION_INPUT_UPGRADE = registerBlockAndItem("production_input_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));

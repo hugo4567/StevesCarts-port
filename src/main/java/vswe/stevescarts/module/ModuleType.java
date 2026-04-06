@@ -35,7 +35,7 @@ public class ModuleType<T extends CartModule> implements ItemConvertible {
 	private RegistryEntry.Reference<ModuleType<?>> registryEntry;
 	private final BiFunction<CartEntity, ModuleType<T>, T> factory;
 	private final Identifier id;
-	private final ModuleItem item;
+	private final Item item;  // Changed from ModuleItem to Item to allow reusing block items
 	private final int moduleCost;
 	private final EnumSet<ModuleSide> sides;
 	private final String translationKey;
@@ -67,8 +67,13 @@ public class ModuleType<T extends CartModule> implements ItemConvertible {
 		this.incompatibilities = incompatibilities;
 		this.tagRequirements = requirements;
 		this.translationKeyText = TextHelper.translatable(this.translationKey);
-		this.item = new ModuleItem(new Item.Settings().group(StevesCartsItems.MODULES).maxCount(1), this);
-		Registry.register(Registry.ITEM, id, this.item);
+		// Only register a new item if one doesn't already exist (avoids conflict with block items)
+		if (Registry.ITEM.containsId(id)) {
+			this.item = Registry.ITEM.get(id);
+		} else {
+			this.item = new ModuleItem(new Item.Settings().group(StevesCartsItems.MODULES).maxCount(1), this);
+			Registry.register(Registry.ITEM, id, this.item);
+		}
 	}
 
 	public RegistryEntry.Reference<ModuleType<?>> getRegistryEntry() {
@@ -115,7 +120,7 @@ public class ModuleType<T extends CartModule> implements ItemConvertible {
 		return id;
 	}
 
-	public ModuleItem getItem() {
+	public Item getItem() {
 		return item;
 	}
 

@@ -1,10 +1,9 @@
 package vswe.stevescarts.client.render.module.storage;
 
-// TODO: Re-enable when LibBlockAttributes is available
-// import alexiil.mc.lib.attributes.fluid.amount.FluidAmount;
-// import alexiil.mc.lib.attributes.fluid.render.DefaultFluidVolumeRenderer;
-// import alexiil.mc.lib.attributes.fluid.render.FluidRenderFace;
-// import alexiil.mc.lib.attributes.fluid.volume.FluidKeys;
+import alexiil.mc.lib.attributes.fluid.amount.FluidAmount;
+import alexiil.mc.lib.attributes.fluid.render.DefaultFluidVolumeRenderer;
+import alexiil.mc.lib.attributes.fluid.render.FluidRenderFace;
+import alexiil.mc.lib.attributes.fluid.volume.FluidKeys;
 import vswe.stevescarts.util.Tank;
 
 import java.util.ArrayList;
@@ -23,10 +22,9 @@ public class FluidRenderUtil {
 		if (tank.isEmpty() || tank.getFluid() == Fluids.EMPTY) {
 			return;
 		}
-		// TODO: Re-enable fluid rendering when LibBlockAttributes is available
-		// List<FluidRenderFace> faces = new ArrayList<>();
-		// float tankPercent = tank.getAmount() / (float) tank.getCapacity();
-		// FluidRenderFace.appendCuboid(x / 16.0f, y / 16.0f, z / 16.0f, (x + sizeX) / 16.0f, (y + sizeY) / 16.0f * tankPercent, (z + sizeZ) / 16.0f, 1, ALL_DIRECTIONS, faces);
-		// DefaultFluidVolumeRenderer.INSTANCE.render(FluidKeys.get(tank.getFluid()).withAmount(FluidAmount.of(tank.getAmount(), tank.getCapacity())), faces, MinecraftClient.getInstance().getBufferBuilders().getEntityVertexConsumers(), matrices);
+		List<FluidRenderFace> faces = new ArrayList<>();
+		float tankPercent = tank.getAmount() / (float) tank.getCapacity();
+		FluidRenderFace.appendCuboid(x / 16.0f, y / 16.0f, z / 16.0f, (x + sizeX) / 16.0f, (y + sizeY) / 16.0f * tankPercent, (z + sizeZ) / 16.0f, 1, ALL_DIRECTIONS, faces);
+		DefaultFluidVolumeRenderer.INSTANCE.render(FluidKeys.get(tank.getFluid()).withAmount(FluidAmount.of(tank.getAmount(), tank.getCapacity())), faces, MinecraftClient.getInstance().getBufferBuilders().getEntityVertexConsumers(), matrices);
 	}
 }

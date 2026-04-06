@@ -5,7 +5,7 @@
     "stevescarts:cargo_manager",
     "stevescarts:fluid_manager",
     "stevescarts:external_distributor",
-    "stevescarts:module_toggler",
+    "stevescarts:module_toggler_block",
     "stevescarts:detector_manager",
     "stevescarts:detector_unit",
     "stevescarts:detector_station",
