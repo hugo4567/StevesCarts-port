@@ -1,22 +1,14 @@
 buildscript {
     repositories {
-        // Plugin Portal / Central use valid certs; try them first.
-        // The ssl.gradle init script (auto-applied by gradlew/gradlew.bat) handles any
-        // remaining certificate issues for maven.fabricmc.net at the SSLContext level.
-        gradlePluginPortal()
-        mavenCentral()
+        // HTTP FIRST - Workaround for SSL certificate issues with maven.fabricmc.net
+        // Gradle tries repos in order, so HTTP will be used before HTTPS fails
         maven {
-            name = "Fabric"
-            url = "https://maven.fabricmc.net/"
-        }
-        // HTTP fallback in case the Cloudflare CDN mismatch is not fully resolved
-        // by the ssl.gradle SSLContext patch (e.g. when Apache HttpClient's
-        // DefaultHostnameVerifier still rejects the mismatched cert).
-        maven {
-            url "http://maven.fabricmc.net/"
+            name = "FabricHTTP"
+            url = "http://maven.fabricmc.net/"
             allowInsecureProtocol = true
         }
-        maven { url "https://repo.gradle.org/gradle/repo" }
+        mavenCentral()
+        gradlePluginPortal()
     }
     dependencies {
         classpath 'net.fabricmc:fabric-loom:1.3.12'
@@ -34,13 +26,13 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-    // HTTPS first for security. The ssl.gradle init script (auto-applied by gradlew)
-    // installs a targeted hostname-verifier bypass for maven.fabricmc.net so the
-    // Cloudflare CDN certificate mismatch is resolved at the SSLContext level.
+    // HTTP FIRST - Workaround for SSL certificate issues with maven.fabricmc.net
     maven {
-        name = "Fabric"
-        url = "https://maven.fabricmc.net/"
+        name = "FabricHTTP"
+        url = "http://maven.fabricmc.net/"
+        allowInsecureProtocol = true
     }
+    mavenCentral()
     maven {
         name = "CottonMC"
         url = "https://server.bbkr.space/artifactory/libs-release"
@@ -48,7 +40,6 @@ repositories {
             includeGroup "io.github.cottonmc"
         }
     }
-    mavenCentral()
     maven {
         name = "BuildCraft"
         url = "https://mod-buildcraft.com/maven"
@@ -62,13 +53,6 @@ repositories {
         content {
             includeGroup "TechReborn"
         }
-    }
-    // HTTP fallback for maven.fabricmc.net – used when the ssl.gradle SSLContext patch
-    // does not fully override Apache HttpClient's DefaultHostnameVerifier.
-    maven {
-        name = "FabricHTTP"
-        url = "http://maven.fabricmc.net/"
-        allowInsecureProtocol = true
     }
 }
 
