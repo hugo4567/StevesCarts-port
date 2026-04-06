@@ -272,7 +272,40 @@ public class CartEntity extends MinecartEntity {
 
 	public boolean isStopped() {
 		return this.stopTicks > 0;
-	}	// Cette classe implémente Storage pour les fluides
+	}
+
+	/**
+	 * Check if the cart has a module of the given type.
+	 * 
+	 * @param moduleClass The class of the module to check for
+	 * @return true if the cart has at least one module of that type
+	 */
+	public boolean hasModule(Class<? extends CartModule> moduleClass) {
+		for (CartModule module : this.modules.values()) {
+			if (moduleClass.isInstance(module)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Get the first module of the given type, if present.
+	 * 
+	 * @param moduleClass The class of the module to get
+	 * @return The module, or null if not found
+	 */
+	@SuppressWarnings("unchecked")
+	public <T extends CartModule> T getModule(Class<T> moduleClass) {
+		for (CartModule module : this.modules.values()) {
+			if (moduleClass.isInstance(module)) {
+				return (T) module;
+			}
+		}
+		return null;
+	}
+
+	// Cette classe implémente Storage pour les fluides
 	@SuppressWarnings("UnstableApiUsage")
 	public class FluidStorage implements net.fabricmc.fabric.api.transfer.v1.storage.Storage<FluidVariant> {
 		private final Long zero = 0L;
