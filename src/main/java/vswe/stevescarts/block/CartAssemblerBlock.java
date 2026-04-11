@@ -1,6 +1,7 @@
 package vswe.stevescarts.block;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -31,7 +32,9 @@ import vswe.stevescarts.block.entity.CartAssemblerBlockEntity;
 import vswe.stevescarts.block.entity.StevesCartsBlockEntities;
 import vswe.stevescarts.screen.CartAssemblerHandler;
 
-public class CartAssemblerBlock extends Block implements NamedScreenHandlerFactory {
+import org.jetbrains.annotations.Nullable;
+
+public class CartAssemblerBlock extends BlockWithEntity {
     public CartAssemblerBlock(FabricBlockSettings settings) {
         super(settings);
     }
@@ -55,12 +58,19 @@ public class CartAssemblerBlock extends Block implements NamedScreenHandlerFacto
         if (world.isClient) {
             return ActionResult.SUCCESS;
         }
-        player.openHandledScreen(this.createScreenHandlerFactory(state, world, pos));
+        NamedScreenHandlerFactory factory = state.createScreenHandlerFactory(world, pos);
+        if (factory != null) {
+            player.openHandledScreen(factory);
+        }
         return ActionResult.CONSUME;
     }
 
     @Override
     public NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world, BlockPos pos) {
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        if (!(blockEntity instanceof CartAssemblerBlockEntity cartAssemblerBlockEntity)) {
+            return null;
+        }
         return new ExtendedScreenHandlerFactory() {
             @Override
             public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
@@ -74,18 +84,23 @@ public class CartAssemblerBlock extends Block implements NamedScreenHandlerFacto
 
             @Override
             public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-                return new CartAssemblerHandler(syncId, inv, ScreenHandlerContext.create(world, pos), (CartAssemblerBlockEntity) world.getBlockEntity(pos));
+                return new CartAssemblerHandler(syncId, inv, ScreenHandlerContext.create(world, pos), cartAssemblerBlockEntity);
             }
         };
     }
 
     @Override
-    public Text getDisplayName() {
-        return CartAssemblerBlockEntity.NAME;
+    @Nullable
+    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new CartAssemblerBlockEntity(pos, state);
     }
 
     @Override
-    public ScreenHandler createMenu(int syncId, PlayerInventory inventory, PlayerEntity player) {
+    @Nullable
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+        if (world.isClient) {
+            return checkType(type, StevesCartsBlockEntities.CART_ASSEMBLER, CartAssemblerBlockEntity::clientTick);
+        }
         return null;
     }
 }
