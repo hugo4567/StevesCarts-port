@@ -1,7 +1,7 @@
 ﻿{
     "key":  {
                 "D":  {
-                          "item":  "stevescarts:blockdetector"
+                          "item":  "stevescarts:detector_manager"
                       },
                 "#":  {
                           "item":  "minecraft:redstone_torch"
@@ -20,7 +20,7 @@
                 ],
     "result":  {
                    "count":  1,
-                   "item":  "stevescarts:blockdetector"
+                   "item":  "stevescarts:detector_junction"
                },
     "type":  "minecraft:crafting_shaped"
 }

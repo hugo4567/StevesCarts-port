@@ -29,7 +29,7 @@
                 ],
     "result":  {
                    "count":  1,
-                   "item":  "stevescarts:blockactivator"
+                   "item":  "stevescarts:module_toggler_block"
                },
     "type":  "minecraft:crafting_shaped"
 }

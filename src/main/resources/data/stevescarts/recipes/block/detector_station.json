@@ -1,7 +1,7 @@
 ﻿{
     "key":  {
                 "D":  {
-                          "item":  "stevescarts:blockdetector"
+                          "item":  "stevescarts:detector_manager"
                       },
                 "#":  {
                           "item":  "minecraft:iron_ingot"
@@ -17,7 +17,7 @@
                 ],
     "result":  {
                    "count":  1,
-                   "item":  "stevescarts:blockdetector"
+                   "item":  "stevescarts:detector_station"
                },
     "type":  "minecraft:crafting_shaped"
 }
