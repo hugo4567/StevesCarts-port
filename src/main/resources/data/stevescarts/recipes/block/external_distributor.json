@@ -17,7 +17,7 @@
                 ],
     "result":  {
                    "count":  1,
-                   "item":  "stevescarts:blockdistributor"
+                   "item":  "stevescarts:external_distributor"
                },
     "type":  "minecraft:crafting_shaped"
 }

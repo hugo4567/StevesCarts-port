@@ -23,7 +23,7 @@
                 ],
     "result":  {
                    "count":  1,
-                   "item":  "stevescarts:blockdetector"
+                   "item":  "stevescarts:detector_unit"
                },
     "type":  "minecraft:crafting_shaped"
 }

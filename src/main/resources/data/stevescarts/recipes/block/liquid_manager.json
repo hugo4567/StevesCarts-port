@@ -14,7 +14,7 @@
                 ],
     "result":  {
                    "count":  1,
-                   "item":  "stevescarts:blockliquidmanager"
+                   "item":  "stevescarts:fluid_manager"
                },
     "type":  "minecraft:crafting_shaped"
 }

@@ -34,22 +34,22 @@ public class StevesCartsBlockEntities {
         LIQUID_MANAGER = Registry.register(
             Registry.BLOCK_ENTITY_TYPE,
             new Identifier(StevesCarts.MOD_ID, "liquid_manager"),
-            FabricBlockEntityTypeBuilder.create(LiquidManagerBlockEntity::new, StevesCartsBlocks.FLUID_MANAGER).build()
+            FabricBlockEntityTypeBuilder.create(LiquidManagerBlockEntity::new, StevesCartsBlocks.FLUID_MANAGER, StevesCartsBlocks.LIQUID_MANAGER).build()
         );
         DISTRIBUTOR = Registry.register(
             Registry.BLOCK_ENTITY_TYPE,
             new Identifier(StevesCarts.MOD_ID, "distributor"),
-            FabricBlockEntityTypeBuilder.create(DistributorBlockEntity::new, StevesCartsBlocks.EXTERNAL_DISTRIBUTOR).build()
+            FabricBlockEntityTypeBuilder.create(DistributorBlockEntity::new, StevesCartsBlocks.EXTERNAL_DISTRIBUTOR, StevesCartsBlocks.DISTRIBUTOR).build()
         );
         ACTIVATOR = Registry.register(
             Registry.BLOCK_ENTITY_TYPE,
             new Identifier(StevesCarts.MOD_ID, "activator"),
-            FabricBlockEntityTypeBuilder.create(ActivatorBlockEntity::new, StevesCartsBlocks.MODULE_TOGGLER_BLOCK).build()
+            FabricBlockEntityTypeBuilder.create(ActivatorBlockEntity::new, StevesCartsBlocks.MODULE_TOGGLER_BLOCK, StevesCartsBlocks.ACTIVATOR).build()
         );
         DETECTOR = Registry.register(
             Registry.BLOCK_ENTITY_TYPE,
             new Identifier(StevesCarts.MOD_ID, "detector"),
-            FabricBlockEntityTypeBuilder.create(DetectorBlockEntity::new, StevesCartsBlocks.MODULE_TOGGLER_BLOCK).build()
+            FabricBlockEntityTypeBuilder.create(DetectorBlockEntity::new, StevesCartsBlocks.DETECTOR_MANAGER, StevesCartsBlocks.DETECTOR).build()
         );
         UPGRADE = Registry.register(
             Registry.BLOCK_ENTITY_TYPE,

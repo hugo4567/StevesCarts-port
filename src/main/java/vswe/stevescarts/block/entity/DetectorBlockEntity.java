@@ -14,7 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class DetectorBlockEntity extends BlockEntity {
-    public static final Text NAME = Text.of("Detector Unit");
+    public static final Text NAME = Text.of("Detector Manager");
     
     public enum DetectorType {
         ANIMAL("Animal"), PLAYER("Player"), HOSTILE("Hostile"), VILLAGER("Villager"), ALL("All");

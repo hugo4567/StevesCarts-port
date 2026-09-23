@@ -14,7 +14,7 @@ import vswe.stevescarts.item.StevesCartsItems;
 public class StevesCartsBlocks {
     public static final Block ADVANCED_DETECTOR_RAIL = registerBlockAndItem("advanced_detector_rail", new AdvancedDetectorRailBlock());
     public static final UpgradeBlock BATTERIES_UPGRADE = registerBlockAndItem("batteries_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
-    public static final Block CARGO_MANAGER = registerBlockAndItem("cargo_manager", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5F)));
+    public static final Block CARGO_MANAGER = registerBlockAndItem("cargo_manager", new CargoManagerBlock());
     public static final UpgradeBlock CART_CRANE_UPGRADE = registerBlockAndItem("cart_crane_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
     public static final UpgradeBlock CART_DEPLOYER_UPGRADE = registerBlockAndItem("cart_deployer_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
     public static final UpgradeBlock CART_MODIFIER_UPGRADE = registerBlockAndItem("cart_modifier_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
@@ -22,14 +22,14 @@ public class StevesCartsBlocks {
     public static final UpgradeBlock CO2_FRIENDLY_UPGRADE = registerBlockAndItem("co2_friendly_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
     public static final UpgradeBlock CREATIVE_MODE_UPGRADE = registerBlockAndItem("creative_mode_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
     public static final Block DETECTOR_JUNCTION = registerBlockAndItem("detector_junction", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5F)));
-    public static final Block DETECTOR_MANAGER = registerBlockAndItem("detector_manager", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5F)));
+    public static final Block DETECTOR_MANAGER = registerBlockAndItem("detector_manager", new DetectorBlock());
     public static final Block DETECTOR_REDSTONE_UNIT = registerBlockAndItem("detector_redstone_unit", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5F)));
     public static final Block DETECTOR_STATION = registerBlockAndItem("detector_station", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5F)));
     public static final Block DETECTOR_UNIT = registerBlockAndItem("detector_unit", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5F)));
     public static final Block ENHANCED_GALGADORIAN_BLOCK = registerBlockAndItem("enhanced_galgadorian_block", new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(1.5F)));
-    public static final Block EXTERNAL_DISTRIBUTOR = registerBlockAndItem("external_distributor", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5F)));
+    public static final Block EXTERNAL_DISTRIBUTOR = registerBlockAndItem("external_distributor", new DistributorBlock());
     public static final UpgradeBlock EXPERIENCED_ASSEMBLER_UPGRADE = registerBlockAndItem("experienced_assembler_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
-    public static final Block FLUID_MANAGER = registerBlockAndItem("fluid_manager", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5F)));
+    public static final Block FLUID_MANAGER = registerBlockAndItem("fluid_manager", new LiquidManagerBlock());
     public static final Block GALGADORIAN_BLOCK = registerBlockAndItem("galgadorian_block", new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(1.5F)));
     public static final UpgradeBlock GENERIC_ENGINE_UPGRADE = registerBlockAndItem("generic_engine_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
     public static final UpgradeBlock INDUSTRIAL_ESPIONAGE_UPGRADE = registerBlockAndItem("industrial_espionage_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
@@ -37,7 +37,7 @@ public class StevesCartsBlocks {
     public static final UpgradeBlock MANAGER_BRIDGE_UPGRADE = registerBlockAndItem("manager_bridge_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
     public static final UpgradeBlock MODULE_INPUT_UPGRADE = registerBlockAndItem("module_input_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
     public static final UpgradeBlock MODULE_KNOWLEDGE_UPGRADE = registerBlockAndItem("module_knowledge_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
-    public static final Block MODULE_TOGGLER_BLOCK = registerBlockAndItem("module_toggler_block", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5F)));
+    public static final Block MODULE_TOGGLER_BLOCK = registerBlockAndItem("module_toggler_block", new ActivatorBlock());
     public static final UpgradeBlock NEW_ERA_UPGRADE = registerBlockAndItem("new_era_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
     public static final UpgradeBlock POWER_CRYSTAL_UPGRADE = registerBlockAndItem("power_crystal_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
     public static final UpgradeBlock PRODUCTION_INPUT_UPGRADE = registerBlockAndItem("production_input_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
@@ -48,7 +48,7 @@ public class StevesCartsBlocks {
     public static final UpgradeBlock THERMAL_ENGINE_UPGRADE = registerBlockAndItem("thermal_engine_upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
     public static final Block LIQUID_MANAGER = registerBlockAndItem("liquid_manager", new LiquidManagerBlock());
     public static final Block DISTRIBUTOR = registerBlockAndItem("distributor", new DistributorBlock());
-    public static final Block DETECTOR = registerBlockAndItem("detector", new DetectorBlock());
+    public static final Block DETECTOR = registerBlockAndItem("detector", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5F)));
     public static final Block ACTIVATOR = registerBlockAndItem("activator", new ActivatorBlock());
     public static final Block IMPLEMENTED_RAIL = registerBlockAndItem("implemented_rail", new ImplementedRailBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
     public static final Block UPGRADE = registerBlockAndItem("upgrade", new UpgradeBlock(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F)));
