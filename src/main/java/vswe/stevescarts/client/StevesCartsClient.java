@@ -60,7 +60,7 @@ public class StevesCartsClient implements ClientModInitializer {
 		BuiltinItemRendererRegistry.INSTANCE.register(StevesCartsItems.CART, (stack, mode, matrices, vertexConsumerProvider, light, overlay) -> StevesCartsClient.getModuleRenderDispatcher().renderItem(stack, matrices, vertexConsumerProvider, light));
 
 		EntityRendererRegistry.register(StevesCartsEntities.CART, CartEntityRenderer::new);
-
+		
 		CartSpawnS2CPacket.init();
 		CartUpdateS2CPacket.init();
 	}
