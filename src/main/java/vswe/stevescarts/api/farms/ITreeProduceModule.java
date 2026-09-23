@@ -26,18 +26,3 @@ public interface ITreeProduceModule extends ITreeModule {
     boolean harvest(BlockState blockState, BlockPos pos, CartEntity cart, 
                    DefaultedList<ItemStack> drops, boolean simulate);
 }
-
-public remove_tree {
-    int getTreeHeight(BlockState blockState, BlockPos pos, CartEntity cart);
-    force boolean canRemoveTree(BlockState blockState, BlockPos pos, CartEntity cart);
-    void removeTree(BlockState blockState, BlockPos pos, CartEntity cart);
-    for each block in tree {
-        if (canRemoveTree(blockState, pos, cart)) {
-            removeTree(blockState, pos, cart);
-        }
-    }
-    while (canRemoveTree(blockState, pos, cart)) {
-        removeTree(blockState, pos, cart);
-    }
-    return true;
-}

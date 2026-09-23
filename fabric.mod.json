@@ -39,7 +39,9 @@
     "java": "\u003e\u003d17"
   },
   "suggests": {
-    "flamingo": "*"
+    "flamingo": "*",
+    "iris": "*",
+    "sodium": "*"
   },
   "jars": [
     {

@@ -221,6 +221,133 @@ Créer une section pour chaque mois avec:
 
 ---
 
+## Septembre 2026 - Progression
+
+### 📊 État global
+- Modules total: **35/124 (28%)** (métrique de suivi existante, à recalculer lors de la prochaine mise à jour des modules)
+- Blocs total: **1/11 (9%)**
+- Version: **v3.0.0-pre-alpha**
+- Status: **Phase 2 en cours**
+
+### ✅ Validations et améliorations ce mois
+- [x] Lancement `runClient` validé avec Minecraft 1.18.2
+- [x] Iris `1.6.6` chargé par Fabric
+- [x] Sodium `0.4.1+build.15` chargé par Fabric
+- [x] Nettoyage de pseudo-code Java invalide dans `ITreeProduceModule`
+- [x] Résolution du verrou Windows sur les artefacts `build/`
+
+### 📈 Détail par catégorie
+- Engines: 6/8
+- Hulls: 6/6
+- Storage: 8/10
+- Tools/Workers: 5/10
+- Detectors: 0/6
+- Armes: 0/8
+- Traitement: 0/7
+- Blocs spécialisés: 1/11
+- Autres modules: 4/XX
+
+### 🚧 En cours
+- [ ] Corriger les déclarations Java parasites restantes dans les renderers et composants modifiés
+- [ ] Corriger les recettes qui référencent des identifiants inexistants (`modulecomponents`, `cartmodule`, `ic2:treetap`)
+- [ ] Recalculer le registre des modules et synchroniser `docs/module_checklist.md`
+
+### 🗺️ Roadmap des problèmes rencontrés
+
+#### ✅ Résolus
+1. **Verrou Windows sur `build/`**
+   - Symptôme: Gradle ne pouvait pas supprimer `build/classes/java/main` et plusieurs dossiers générés.
+   - Cause: artefacts de build conservés par un processus Java/Gradle.
+   - Action: arrêt du processus puis suppression/recréation des artefacts générés.
+
+2. **Pseudo-code Java dans `ITreeProduceModule`**
+   - Symptôme: erreurs `class, interface, enum, or record expected`.
+   - Cause: bloc `public remove_tree` ajouté après la fermeture de l’interface.
+   - Action: suppression du bloc non utilisé et non référencé.
+
+3. **Déclarations hors classe dans le rendu**
+   - Symptôme: erreurs de compilation dans `HullRenderer`, `RenderUtil`, `ModuleRenderer` et `CartComponentItem`.
+   - Cause: constantes, méthodes ou classes ajoutées après la fermeture des classes Java ou au mauvais niveau d’imbrication.
+   - Action: déplacement des éléments dans la portée correcte et suppression des fragments parasites non utilisés.
+
+4. **Chargement d’Iris et Sodium**
+   - Symptôme initial: mods absents de `runClient`.
+   - Cause: JAR présents dans le mauvais dossier.
+   - Action: déplacement des versions Minecraft 1.18.2 dans `run/mods/`.
+   - Résultat: Iris 1.6.6 et Sodium 0.4.1+build.15 sont chargés avec succès.
+
+#### 🚧 À corriger
+5. **Recettes avec des identifiants inconnus**
+   - Impact: environ 179 références à `stevescarts:modulecomponents`, 17 à `stevescarts:cartmodule` et plusieurs références à `blockmetalstorage`, `blockadvdetector`, `blockdistributor`, `blockjunction`, `ic2:treetap` et `techreborn:treetap`.
+   - Action prévue: remplacer les identifiants par les registres Fabric réels ou désactiver les recettes dépendantes de mods absents.
+
+6. **Textures manquantes**
+   - Impact: erreurs `Using missing texture` pour de nombreux items (`activator`, `iron_drill`, `projectile_egg`, `liquid_manager`, etc.).
+   - Action prévue: vérifier les chemins `assets/stevescarts/textures`, corriger les références des modèles et restaurer les textures réellement absentes.
+
+7. **Blockstates et modèles manquants**
+   - Impact: fichiers absents pour `module_toggler_block`, `liquid_manager`, `distributor`, `detector`, `implemented_rail` et `upgrade`.
+   - Action prévue: générer ou ajouter les blockstates, modèles de blocs et variantes manquants.
+
+8. **Propriété `shape` invalide sur les rails**
+   - Impact: les blockstates de `advanced_detector_rail` et `junction_rail` utilisent `shape`, mais la propriété n’est pas déclarée sur les blocs concernés.
+   - Action prévue: aligner les propriétés Java des blocs avec les blockstates, ou simplifier les variantes JSON selon le comportement réel des blocs.
+
+9. **Avertissements Mixin liés aux versions Java**
+   - Impact: messages indiquant que certaines classes ciblent une version supérieure à celle annoncée par Mixin.
+   - Action prévue: vérifier la compatibilité Java 17/21, Loom, Fabric Loader, Iris et Fabric API avant publication.
+
+10. **Connexion Realms non autorisée en environnement de développement**
+    - Impact: message d’échec d’authentification Realms dans le log.
+    - Action prévue: ignorer en développement ou tester avec une session Minecraft correctement authentifiée.
+
+11. **Connexion temporaire du Gradle Worker**
+    - Impact: échec ponctuel sur `127.0.0.1:9553` avant la compilation.
+    - Action prévue: arrêter les daemons Gradle/Java bloqués et relancer avec `--no-daemon` si le problème réapparaît.
+
+### 🔥 Blockers identifiés
+- ⚠️ Plusieurs recettes sont rejetées au chargement à cause d’items inconnus.
+- ⚠️ Le build et le client peuvent fonctionner, mais la couverture fonctionnelle des recettes reste incomplète.
+- ⚠️ **Blockers hérités de février toujours ouverts** :
+   - système de carburant incomplet dans le Cart Assembler ;
+   - configurations incomplètes de `ThermalEngine` et `CoalEngine` ;
+   - optimisation du rendu des minecarts encore à finaliser.
+
+### 🧾 Problèmes de février non résolus
+- [ ] **Fuel system** : terminer la gestion du carburant dans le Cart Assembler.
+- [ ] **Configurations des moteurs** : compléter et valider `ThermalEngine` et `CoalEngine`.
+- [ ] **Rendu des minecarts** : poursuivre l’optimisation et vérifier le comportement avec Iris/Sodium.
+- [ ] **Modules de base** : finaliser `Internal Storage`, `Internal Tank` et le rendu de `Invisibility Core`.
+
+### 💡 Innovations implémentées
+- Compatibilité optionnelle déclarée pour Iris et Sodium dans le metadata Fabric.
+- Rendu basé sur les APIs vanilla, compatible avec l’injection shader d’Iris.
+- Environnement de test `run/mods/` configuré avec les versions Minecraft 1.18.2.
+
+### 📝 Notes techniques
+- `runClient` utilise `run/mods/`, et non le dossier `mods/` à la racine du projet.
+- Le log confirme le chargement de 63 mods et une fermeture normale du client.
+- Les erreurs restantes sont principalement liées aux données de recettes, pas au chargement d’Iris ou Sodium.
+
+### 📚 Documentation mise à jour
+- [x] `LOG_MENSUEL.md`
+- [ ] `module_checklist.md`
+- [ ] `ETAT_PROGRESSION.md`
+- [ ] `ROADMAP.md`
+
+### 🔗 Ressources utilisées
+- `src_old/` pour la comparaison des APIs de modules
+- Log de lancement `run/logs/latest.log`
+- `GUIDE_PORTAGE.md`
+
+### 🎯 Objectif prochain mois
+1. Corriger les recettes invalides et régénérer les données.
+2. Finir le nettoyage des fichiers Java modifiés.
+3. Recalculer précisément les modules portés et mettre à jour la checklist.
+4. Tester les rendus des carts avec Iris et Sodium.
+
+---
+
 ## Instructions pour futures mises à jour
 
 1. **Créer une nouvelle section** pour chaque mois

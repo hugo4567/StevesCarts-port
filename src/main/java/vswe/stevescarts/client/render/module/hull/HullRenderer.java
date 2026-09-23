@@ -19,6 +19,9 @@ import net.fabricmc.api.Environment;
 public class HullRenderer<T extends HullModule> extends ModuleRenderer<T> {
 	private final HullModel model;
 	private final HullTopModel topModel;
+	private static final Identifier TEXTURE = new Identifier("stevescarts", "textures/modules/hull/hull.png");
+	private static final Identifier TOP_TEXTURE = new Identifier("stevescarts", "textures/modules/hull/hull_top.png");
+	private static final HullRenderer<HullModule> RENDERER = new HullRenderer<>(TEXTURE, TOP_TEXTURE);
 
 	public HullRenderer(Identifier texture, Identifier topTexture) {
 		this.model = new HullModel(texture);
@@ -33,3 +36,4 @@ public class HullRenderer<T extends HullModule> extends ModuleRenderer<T> {
 		}
 	}
 }
+

@@ -76,4 +76,12 @@ public class RenderUtil {
             }
         }
     }
+
+    private static void drawTexturedQuad(BufferBuilder bufferBuilder, float x, float y, float z, float width, float height, float minU, float maxU, float minV, float maxV) {
+        bufferBuilder.vertex(x, y + height, z).texture(minU, maxV).next();
+        bufferBuilder.vertex(x + width, y + height, z).texture(maxU, maxV).next();
+        bufferBuilder.vertex(x + width, y, z).texture(maxU, minV).next();
+        bufferBuilder.vertex(x, y, z).texture(minU, minV).next();
+    }
 }
+
